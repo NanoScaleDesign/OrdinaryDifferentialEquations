@@ -1,0 +1,72 @@
+\documentclass[a4paper]{book} %{article}
+
+\usepackage{fullpage} % Package to use full page
+\usepackage{parskip} % Package to tweak paragraph skipping
+\usepackage{tikz} % Package for drawing
+\usepackage{amsmath}
+\usepackage{hyperref}
+\def\UrlBreaks{\do\/\do-}
+\usepackage[absolute]{textpos}
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\usepackage{tikz}
+\usepackage{siunitx}
+\usepackage[UKenglish]{isodate}
+
+\newcommand{\disctime}{10:30 to 12:00 }
+\newcommand{\discdays}{Wednesdays }
+\newcommand{\discroom}{W4-862}
+\newcommand{\discexam}{10th February 2017}
+\newcommand{\course}{Ordinary Differential Equations }
+\newcommand{\courseurl}{ordinary-differential-equations-2016}
+\newcommand{\nensei}{2nd}
+
+\newcommand{\six}[1]{\SI[parse-numbers=false]{X}{#1}}
+\newcommand{\hash}[2]{MD5(#1\_X) = #2\ldots}
+\graphicspath{{Images/}}
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+        
+        \Huge
+        \textbf{Ordinary Differential Equations}
+
+        Autumn 2016
+        
+        \vspace{2.0cm}
+        \LARGE
+        James Cannon\\Kyushu University
+        
+        \vspace{1.5cm}
+        \Large
+        Last updated:\\\today
+
+        \vfill
+        
+        \url{http://www.jamescannon.net}
+        \vspace{1.5cm}
+
+        \small
+        This document is licensed \emph{CC BY-NC 4.0}.
+        
+    \end{center}
+\end{titlepage}
+
+
+\input{instructions}
+\input{hash}
+
+\newpage
+\tableofcontents
+
+
+\chapter{Definitions}
+\include{definitions}
+% In addition, cover initial conditions
+\chapter{1st-order differential equations}
+\include{1storder}
+
+\end{document}
