@@ -247,6 +247,7 @@ Add the points of the autonomous differential equations in the following list:
 \six{}
 
 \hash{f}{9bf043} 
+% Would be good to add some vector fields to show that it's independent of x.
 
 
 
@@ -342,9 +343,183 @@ Considering the differential equation $y'=10-y$, an initial value of $y(0)=1$ an
 % It would be nice to see if this error actually goes to zero in the end.
 
 
-% Exact DE's
-% If D[psi(x,y)] = \ldots, what is partial psi/partial x?
-% Which of the following are exact differential equations? (points)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Exact differential equations: derivation}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Videos: \url{https://www.khanacademy.org/math/differential-equations/first-order-differential-equations/exact-equations/v/exact-equations-intuition-1-proofy}
+\end{itemize}
+
+\subsection*{Challenge}
+If
+\begin{equation}
+    \frac{d \psi(x,y)}{dx} = cos(x)sin(y) + x^2y' - (x+y)/100
+\end{equation}
+
+what is $\displaystyle \frac{\partial \psi}{\partial x}$?
+
+To check your answer, substitute $x=3.1$ and $y=-2x$ into the resulting equation.
+
+\subsection*{Solution}
+\six{}
+
+\hash{v}{a51df7}
+% Note that video is not so clear about psi being a full rather than partial derivative. This question should help address this problem.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Exact differential equations: possible solutions given $\psi_x$}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Videos: Exact equations intuition 1,2 and examples 1,2,3 starting from \url{https://www.khanacademy.org/math/differential-equations/first-order-differential-equations/exact-equations/v/exact-equations-intuition-1-proofy}
+    \item Text: \url{http://tutorial.math.lamar.edu/Classes/DE/Exact.aspx}
+\end{itemize}
+
+\subsection*{Challenge}
+Sum the points of all the possible solutions to the integral of the differential equation:
+\begin{equation}
+    \psi_x = 6x - 3e^x sin(y)
+\end{equation}
+
+1 point: $3x^2-3e^x sin(y) + 4$
+
+2 points: $3x^2-3e^x sin(y) + x$
+
+4 points: $3x^2-3e^x sin(y) + y$
+
+8 points: $3x^2-3e^x sin(y) + yx$
+
+16 points: $3x^2-3e^x sin(y) + y^2$
+
+32 points: $3x^2-3e^x sin(y) + 5 sin(y)$
+
+64 points: $3x^2-3e^x sin(y) + 5 sin(y)cos(x)$
+
+\subsection*{Solution}
+\six{}
+
+\hash{b}{408993} 
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Exact differential equations: identification}
+\label{sec:edeid}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Videos: Exact equations intuition 1,2 starting from \url{https://www.khanacademy.org/math/differential-equations/first-order-differential-equations/exact-equations/v/exact-equations-intuition-1-proofy}
+    \item Text: \url{http://tutorial.math.lamar.edu/Classes/DE/Exact.aspx}
+\end{itemize}
+
+\subsection*{Challenge}
+Sum the points of the equations below that are exact differential equations:
+
+1 point: $\displaystyle (3x^2y+8xy^2) dx + (x^3 + 8x^2y + 12 y^2) dy = 0$ % A
+
+2 points: $\displaystyle sin(x) cos(y) dx + cos(x) sin(y) dy = 0$ % B
+
+4 points: $\displaystyle sin(x) cos(y) dx + sin(x) sin(y) dy = 0$ % C
+
+8 points: $\displaystyle \frac{dx}{x} + \frac{dy}{y} = 0$ % D
+
+16 points: $\displaystyle -\frac{y dx + x dy}{x^2} = 0 $ % E
+
+32 points: $\displaystyle -\frac{y dx - x dy}{x^2} = 0$ % F
+
+
+\subsection*{Solution}
+\six{}
+
+\hash{n}{868f48} 
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Exact differential equations: solving}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Videos: Exact equations examples 1,2,3 starting from \url{https://www.khanacademy.org/math/differential-equations/first-order-differential-equations/exact-equations/v/exact-equations-example-1}
+    \item Text: \url{http://tutorial.math.lamar.edu/Classes/DE/Exact.aspx}
+\end{itemize}
+
+\subsection*{Challenge}
+Solve the exact differential equations (EDE's) in challenge \ref{sec:edeid} applying the following conditions in the same order as the EDE's appeared before.
+
+\subsubsection{1st EDE}
+No need to try to solve this one.
+
+\subsubsection{2nd EDE}
+Use the condition $y(\pi/4)=\pi/4$ to find an explicit solution for the equation and then evaluate $y$ at $x=\pi$.
+
+\subsubsection{3rd EDE}
+Use the condition $y(1)=3$ to find an explicit solution for the equation and then evaluate $y$ at $x=4$.
+
+\subsubsection{4th EDE}
+Use the condition $y(1)=2$ to find an explicit solution for the equation and then evaluate $y$ at $x=1$.
+
+
+\subsection*{Solution}
+
+\subsubsection{2nd EDE}
+\six{}
+
+\hash{m}{af87e2}
+
+\subsubsection{3rd EDE}
+\six{}
+
+\hash{aa}{d01c3d}
+
+\subsubsection{4th EDE}
+\six{}
+
+\hash{bb}{5e1074}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Exact differential equations: integrating factors}
+
+%\subsection*{Resources}
+%\begin{itemize}
+%    \item Videos: Integrating factors 1,2 starting from \url{https://www.khanacademy.org/math/differential-equations/first-order-differential-equations/exact-equations/v/integrating-factors-1}
+%\end{itemize}
+
+%\subsection*{Challenge}
+%Solve the exact differential equations below using integrating factors.
+
+%\subsection*{Solution}
+%\six{}
+
+%\hash{}{}
+
+
+% Remaining Khan 1st-order equations
+% Benouli and substitution
+% Free-for-all mix of 1st-order equations
+
 % About 4.5 weeks on 1st-order and 4.5 weeks on 2nd order?
 % Khan covers 1st-order well but 2nd-order not so much.
 % Follow Khan for 1st-order, then do 2nd order and fill in holes with Paul's notes - this may cause issues if terminology is different.
