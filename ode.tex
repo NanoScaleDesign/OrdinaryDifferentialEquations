@@ -12,6 +12,7 @@
 \usepackage{tikz}
 \usepackage{siunitx}
 \usepackage[UKenglish]{isodate}
+\usepackage{ctable} % Thick table lines
 
 \newcommand{\disctime}{10:30 to 12:00 }
 \newcommand{\discdays}{Fridays }
@@ -30,39 +31,42 @@
 \begin{titlepage}
     \begin{center}
         \vspace*{1cm}
-        
+
         \Huge
         \textbf{Ordinary Differential Equations}
 
         Autumn 2016
-        
-        \vspace{2.0cm}
-        \LARGE
-        James Cannon\\Kyushu University
-        
+
         \vspace{1.5cm}
         \Large
         Last updated:\\\today
 
+        \vspace{4.0cm}
+        \LARGE
+        James Cannon\\Kyushu University
         \vfill
-        
+
         \normalsize
-        \url{http://www.jamescannon.net/teaching/\courseurl}
+        \url{http://www.jamescannon.net/teaching/\courseurl}\\
+        \vspace{0.3cm}
+        \small
+        \url{http://raw.githubusercontent.com/NanoScaleDesign/OrdinaryDifferentialEquations/master/ode.pdf}
         \vspace{0.5cm}
 
-        \small
-        This document is licensed \emph{CC BY-NC 4.0}.
-        
+        License: \emph{CC BY-NC 4.0}.
+
     \end{center}
 \end{titlepage}
 
+\setcounter{chapter}{-1}
 
-\input{instructions}
-\input{hash}
-
-\newpage
 \tableofcontents
 
+\chapter{Course information}
+\newpage
+\input{instructions}
+\input{timetable}
+\input{hash}
 
 \chapter{Definitions}
 \include{definitions}
