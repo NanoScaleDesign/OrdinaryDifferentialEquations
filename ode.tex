@@ -11,12 +11,13 @@
 \setlength{\TPVertModule}{1mm}
 \usepackage{tikz}
 \usepackage{siunitx}
+\usepackage{datetime} % Time
 \usepackage[UKenglish]{isodate}
 \usepackage{ctable} % Thick table lines
 
 \newcommand{\disctime}{10:30 to 12:00 }
 \newcommand{\discdays}{Fridays }
-\newcommand{\discroom}{W4-862}
+\newcommand{\discroom}{W4-529}
 \newcommand{\discexam}{10th February 2017}
 \newcommand{\course}{Ordinary Differential Equations }
 \newcommand{\courseurl}{ordinary-differential-equations}
@@ -24,7 +25,7 @@
 
 \newcommand{\six}[1]{\SI[parse-numbers=false]{X}{#1}}
 \newcommand{\hash}[2]{MD5(#1\_X) = #2\ldots}
-\newcommand{\timebox}{\vfill Study-time (from end of previous challenge to end of this challenge): \underline{\hspace{1cm} hours}}
+\newcommand{\timebox}{\vfill Study-time (from end of previous challenge to end of this challenge): \underline{\hspace{1cm} minutes}}
 
 \graphicspath{{Images/}}
 
@@ -41,7 +42,7 @@
 
         \vspace{1.5cm}
         \Large
-        Last updated:\\\today
+        Last updated:\\\today \ at \currenttime
 
         \vspace{4.0cm}
         \LARGE
