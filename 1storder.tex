@@ -514,24 +514,138 @@ Use the condition $y(1)=2$ to find an explicit solution for the equation and the
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\newpage
+\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Exact differential equations: integrating factors}
+\section{Exact differential equations: a useful integration method}
 
-%\subsection*{Resources}
-%\begin{itemize}
-%    \item Videos: Integrating factors 1,2 starting from \url{https://www.khanacademy.org/math/differential-equations/first-order-differential-equations/exact-equations/v/integrating-factors-1}
-%\end{itemize}
+\subsection*{Challenge}
+Obtain an expression for $g(x)$ in terms of $f(x)$ in the following integral:
 
-%\subsection*{Challenge}
-%Solve the exact differential equations below using integrating factors.
+\begin{equation}
+    \int \frac{f'(x)}{f(x)} dx = g(x)
+\end{equation}
 
-%\subsection*{Solution}
-%\six{}
+ie, you should be able to re-write $g(x)$ in terms of a simple (non-integral) function of $f(x)$, in the form $g(x) = \cdots$.
 
-%\hash{}{}
+\subsection*{Solution}
+You can check your answer by putting a function of $x$ into $f(x)$.
 
-%\timebox
+\timebox
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Exact differential equations: integrating factors}
+\label{sec:edeif}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Videos: Integrating factors 1,2 starting from \url{https://www.khanacademy.org/math/differential-equations/first-order-differential-equations/exact-equations/v/integrating-factors-1}
+\end{itemize}
+
+\section*{Comment}
+Note that in the videos, Sal Khan does an example considering an integrating factor of $\mu(x)$, but in some cases $\mu(y)$ leads to a solution more easily. You may need to try both to determine an answer.
+
+\subsection*{Challenge}
+Solve the exact differential equations below using integrating factors.
+
+1. Solve the equation below using an integrating factor. Place the solution in the form $f(x,y) = C$, then calculate the value of $C$ when substituting $x=2$ and $y=1$ into the equation. Do not try to solve the equation to get it in the form $y(x)=\cdots$.
+
+\begin{equation}
+    \label{eq:edeif1}
+    y dx + (2 x y - e^{-2 y}) dy = 0
+\end{equation}
+
+2. Calculate the integrating factor for the following equation. To check your answer, substitute $x=1$ or $y=1$ into any final expression, assuming an integration constant of zero.
+
+\begin{equation}
+    \label{eq:edeif2}
+    y(3x-y) dx + x(x-y)dy = 0
+\end{equation}
+
+3. Show that $1/(x^y+y^2)$ is an integrating factor for the equation
+\begin{equation}
+    x dx + y dy + 4 y^3 (x^2 + y^2) = 0
+\end{equation}
+
+\subsection*{Solution}
+Question related to equation \ref{eq:edeif1}: \hash{cc}{bb15d6}
+
+Question related to equation \ref{eq:edeif2}: \hash{dd}{6a8742}
+
+\timebox
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Exact differential equations: integrating factor derivation}
+\label{sec:intfacderiv}
+
+\subsection*{Challenge}
+1. Starting from the equation
+
+\begin{equation}
+    \mu(x,y) M(x,y) dx + \mu(x,y) N(x,y) dy = 0
+\end{equation}
+
+show that if the integrating factor $\mu$ is only a function of $x$, then
+
+\begin{equation}
+    \label{eq:intfacmux}
+    \mu_x = \mu \left ( \frac{M_y-N_x}{N} \right )
+\end{equation}
+
+2. Do the same, assuming that $\mu$ is only a function of $y$.
+
+% NT do something for linear equations mu=e^\int(a)
+
+\timebox
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Exact differential equations: integrating factor calculation}
+\label{sec:edeifcalc}
+
+\section*{Comment}
+Without proof, we can use equation \ref{eq:intfacmux} to gain information about the existance of an integration factor. If $\left ( \frac{M_y-N_x}{N} \right )$ is a function of $x$ only, then we know that the integration factor is only a function of $x$, and it can be solved for by integration of equation \ref{eq:intfacmux}. The same can be said for $\mu(y)$ that you derived an expression for in challenge \ref{sec:intfacderiv}.
+
+\subsection*{Challenge}
+Use equations from section \ref{sec:intfacderiv} and information provided in the comment here to determine the integrating factor for
+
+\begin{equation}
+    \label{eq:edeifcalc1}
+    e^x dx + (e^x Cot(y) + 2y Csc(y)) dy = 0
+\end{equation}
+
+and
+
+\begin{equation}
+    \label{eq:edeifcalc2}
+    (y-x^2) dx + 2xy dy = 0
+\end{equation}
+
+To check your answer, for both cases substitute $x=\pi$ or $y=\pi$ into the integrating factor, and assume an integration constant of 1.
+
+\subsection*{Solution}
+
+
+Equation \ref{eq:edeifcalc1}: \hash{ee}{51a0ae}
+
+Equation \ref{eq:edeifcalc2}: \hash{ff}{a56bce}
+
+
+\timebox
+
 
 % Remaining Khan 1st-order equations
 % Benouli and substitution
