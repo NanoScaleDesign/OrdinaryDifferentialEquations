@@ -186,25 +186,9 @@ Value of x where solution is undefined:
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Compound increase}
 
-\subsection*{Resources}
-\begin{itemize}
-    \item Videos: \url{https://www.khanacademy.org/economics-finance-domain/core-finance/interest-tutorial/compound-interest-tutorial/v/introduction-to-compound-interest}
-\end{itemize}
+\stepcounter{section}
 
-\subsection*{Challenge}
-In an unconstrained situation (ie, no limit to the amount of bacteria so it is able to increase exponentially with time, forever), if the amount of bacteria on a surface increases by 20\% every 25 hours, how much does the amount grow per hour in percentage terms? Ie, if one observes the amount of bacteria one hour from now, by what percentage should one expect the amount of bacteria to have increased?
-
-\subsection*{Solution}
-\six{\%}
-
-\hash{s}{4288d8} 
-
-\timebox
 
 
 
@@ -218,15 +202,18 @@ In an unconstrained situation (ie, no limit to the amount of bacteria so it is a
     \item Videos: The 5 videos on the logistic differential equation and function starting at: \url{https://www.khanacademy.org/math/differential-equations/first-order-differential-equations/logistic-differential-equation/v/modeling-population-with-differential-equations}
 \end{itemize}
 
+\subsection*{Comment}
+The rate of growth can be calculated considering the equation $dN/dt=rN$. This was not clear in an earlier version of the challenge. The question has also been adjusted (100 mg instead of 300 mg) to minimise the chance of rounding errors effecting final answer. The hash-code has been updated to reflect this.
+
 \subsection*{Challenge}
-In an unconstrained situation, a given bacteria is able to reproduce at such a rate that the amount of bacteria measured in mg increases by 20\% every 25 hours. However, due to environmental factors the limiting (maximum) amount of bacteria that can exist in the system at any one time is 400 mg. Assuming an initial amount of bacteria of 20 mg, how much time, rounded to the nearest integer hours, must one wait to reach 300 mg of bacteria?
+Assuming there is no-limit on growth, a given bacteria would be able to reproduce at such a rate that the amount of bacteria measured in mg increases by 20\% every 25 hours. However, due to environmental factors the limiting (maximum) amount of bacteria that can exist in the system at any one time is 400 mg. Assuming an initial amount of bacteria of 20 mg, how much time, rounded to the nearest integer hours, must one wait to reach 100 mg of bacteria?
 
 \emph{Note: Be sure to maintain a sufficient number of significant figures in your numbers while performing the calculation.}
 
 \subsection*{Solution}
 \six{hours} (expressed as an integer - do not enter ``.00''.)
 
-\hash{d}{b0d406} 
+\hash{d}{0eba84} 
 
 \timebox
 
@@ -276,6 +263,7 @@ Add the points of the autonomous differential equations in the following list:
 \subsection*{Resources}
 \begin{itemize}
     \item Text: \url{http://tutorial.math.lamar.edu/Classes/DE/EquilibriumSolutions.aspx}
+    \item Text: \url{http://www.math.psu.edu/tseng/class/Math251/Notes-1st\%20order\%20ODE\%20pt2.pdf}
 \end{itemize}
 
 \subsection*{Challenge}
@@ -379,7 +367,7 @@ Please follow the two videos on derivation and intuition regarding exact differe
 
 If
 \begin{equation}
-    \frac{d \psi(x,y)}{dx} = cos(x)sin(y) + x^2y' - (x+y)/100
+    \frac{d \psi(x,y)}{dx} = 2xy + x^2y' - (x+y)/100
 \end{equation}
 
 what is $\displaystyle \frac{\partial \psi}{\partial x}$?
@@ -389,7 +377,7 @@ To check your answer, substitute $x=3.1$ and $y=-2$ into the resulting equation.
 \subsection*{Solution}
 \six{}
 
-\hash{v}{705027}
+\hash{v}{f7f178}
 % Note that video is not so clear about psi being a full rather than partial derivative. This question should help address this problem.
 \timebox
 
