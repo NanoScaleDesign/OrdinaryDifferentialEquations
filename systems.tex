@@ -1,0 +1,415 @@
+\section{Homogeneous vs non-homogeneous}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Page 1 of the PDF \url{http://www.math.psu.edu/tseng/class/Math251/Notes-LinearSystems.pdf}
+\end{itemize}
+
+\subsection*{Challenge}
+Separately add the points of the following \emph{homogeneous} and \emph{non-homogeneous} ODE systems:
+
+1 point:
+$\displaystyle
+\left(
+    \begin{array}{c}
+        x_1' \\
+        x_2' \\
+        x_3'
+    \end{array}
+\right)
+=
+\left(
+    \begin{array}{ccc}
+        1 & 2 & 3 \\
+        4 & 5 & 6 \\
+        7 & 8 & 9
+    \end{array}
+\right)
+\left(
+    \begin{array}{c}
+        x_1 \\
+        x_2 \\
+        x_3
+    \end{array}
+\right)
++
+\left(
+    \begin{array}{c}
+        0 \\
+        0 \\
+        0
+    \end{array}
+\right)
+$
+
+2 points:
+$\displaystyle
+\left(
+    \begin{array}{c}
+        x_1' \\
+        x_2' \\
+        x_3'
+    \end{array}
+\right)
+=
+\left(
+    \begin{array}{ccc}
+        1 & 2 & 3 \\
+        4 & 5 & 6 \\
+        7 & 8 & 9
+    \end{array}
+\right)
+\left(
+    \begin{array}{c}
+        x_1 \\
+        x_2 \\
+        x_3
+    \end{array}
+\right)
++
+\left(
+    \begin{array}{c}
+        Cos(t) \\
+        0 \\
+        0
+    \end{array}
+\right)$
+
+4 points:
+$\displaystyle
+\left(
+    \begin{array}{c}
+        x_1' \\
+        x_2' \\
+        x_3'
+    \end{array}
+\right)
+=
+\left(
+    \begin{array}{ccc}
+        1 & 2 & 3 \\
+        4 & 5 & 6 \\
+        7 & 8 & 9
+    \end{array}
+\right)
+\left(
+    \begin{array}{c}
+        x_1 \\
+        x_2 \\
+        x_3
+    \end{array}
+\right)
++
+\left(
+    \begin{array}{c}
+        Cos(t) \\
+        Sin(t) \\
+        0
+    \end{array}
+\right)$
+
+8 points:
+$\displaystyle
+\left(
+    \begin{array}{c}
+        x_1' \\
+        x_2' \\
+        x_3'
+    \end{array}
+\right)
+=
+\left(
+    \begin{array}{ccc}
+        1 & 2 & 3 \\
+        4 & 5 & 6 \\
+        7 & 8 & 9
+    \end{array}
+\right)
+\left(
+    \begin{array}{c}
+        x_1 \\
+        x_2 \\
+        x_3
+    \end{array}
+\right)
++
+\left(
+    \begin{array}{c}
+        Cos(t) \\
+        Sin(t) \\
+        Tan(t)
+    \end{array}
+\right)$
+
+\subsection*{Solution}
+Homogeneous: \hash{hhh}{106c67} \\
+Non-homogeneous: \hash{iii}{d51f57}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Basis for creating a system of equations from a single ODE}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Pages 1-4 of the PDF \url{http://www.math.psu.edu/tseng/class/Math251/Notes-LinearSystems.pdf} 
+\end{itemize}
+
+\subsection*{Comment}
+Considering the general form of an nth-order linear equation,
+\begin{equation}
+    a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y^1 + a_0 y = g(t)
+\end{equation}
+we substitute $x_1=y$, $x_2=y'$, \ldots, $x_n=y^{(n-1)}$ and $x_n'=y^{(n)}$.
+
+When replacing a $y$-term by an $x$ term, the $n$ in $x_n$ corresponds to the number of times $y$ is differentiated, plus one. So $x_n$ corresponds to $y$ being differentiated $(n-1)$ times. Similarly, $x_n'$ corresponds to the differentiation one more time of $y^{(n-1)}$ (ie, $y^{(n)}$). Therefore, if the $y$-terms are replaced by $x'$ terms, then the $n$ in $x_n'$ corresponds to the number of times $y$ is differentiated (ie, $y^{(n)}$).
+
+The examples on page 3 are clearer after reading page 4, so I encourage you to read page 4 before considering the examples.
+
+Considering example (II) on page 3, you are given the equation
+\begin{equation}
+    y''' - 2y'' + 3y' - 4y = 0
+\end{equation}
+
+To add a more detailed explanation to that found in the PDF: First re-write the ODE in terms of $x$ and $x'$. Note that there is no ``$x_0'$'' so we just write it as $x_1$ in both equations.
+\begin{align}
+    x_4 - 2 x_3 + 3 x_2 - 4 x_1 &= 0 \label{eq:xs} \\
+    x_3' - 2 x_2' + 3 x_1' - 4 x_1 &= 0 \label{eq:xprimes}
+\end{align}
+
+Our aim is to write the system of equations in the form $\bm{x'} = \bm{A}\bm{x}$. Note that there is no ``$x_4'$'' in our equations, so the largest value of $n$ in $x_n'$ will be 3 (ie, $x_3'$).
+\begin{equation}
+    \left(
+        \begin{array}{c}
+            x_1' \\
+            x_2' \\
+            x_3'
+        \end{array}
+    \right)
+    =
+    \left(
+        \begin{array}{ccc}
+            ? & ? & ? \\
+            ? & ? & ? \\
+            ? & ? & ?
+        \end{array}
+    \right)
+    \left(
+        \begin{array}{c}
+            x_1 \\
+            x_2 \\
+            x_3
+        \end{array}
+    \right)
+\end{equation}
+where the question marks are values that we have to find.
+
+By direct comparison of equations \ref{eq:xs} and \ref{eq:xprimes} we know that $x_1' = x_2$ which can be written as $x_1' = 0 x_1 + 1 x_2 + 0 x_3$ yielding the first line in the matrix $\bm{A}$:
+\begin{equation}
+    \left(
+        \begin{array}{c}
+            x_1' \\
+            x_2' \\
+            x_3'
+        \end{array}
+    \right)
+    =
+    \left(
+        \begin{array}{ccc}
+            0 & 1 & 0 \\
+            ? & ? & ? \\
+            ? & ? & ?
+        \end{array}
+    \right)
+    \left(
+        \begin{array}{c}
+            x_1 \\
+            x_2 \\
+            x_3
+        \end{array}
+    \right)
+\end{equation}
+
+We can then proceed to do $x_2$ in a similar fashion:
+\begin{equation}
+    \left(
+        \begin{array}{c}
+            x_1' \\
+            x_2' \\
+            x_3'
+        \end{array}
+    \right)
+    =
+    \left(
+        \begin{array}{ccc}
+            0 & 1 & 0 \\
+            0 & 0 & 1 \\
+            ? & ? & ?
+        \end{array}
+    \right)
+    \left(
+        \begin{array}{c}
+            x_1 \\
+            x_2 \\
+            x_3
+        \end{array}
+    \right)
+\end{equation}
+
+In order to express $x_3'$ in the above matrix form, we need it in terms of $x_1$, $x_2$ and $x_3$ rather than $x_4$, so instead of direct comparison, we swap $x_4$ for $x_3'$ in equation \ref{eq:xs} to read
+\begin{equation}
+    x_3' - 2 x_3 + 3 x_2 - 4 x_1 = 0
+\end{equation}
+and then isolate $x_3'$ to read $x_3' = 4 x_1 - 3 x_2 + 2 x_3$ yielding the final form of our systems of equations
+\begin{equation}
+    \left(
+        \begin{array}{c}
+            x_1' \\
+            x_2' \\
+            x_3'
+        \end{array}
+    \right)
+    =
+    \left(
+        \begin{array}{ccc}
+            0 & 1 & 0 \\
+            0 & 0 & 1 \\
+            4 & -3 & 2
+        \end{array}
+    \right)
+    \left(
+        \begin{array}{c}
+            x_1 \\
+            x_2 \\
+            x_3
+        \end{array}
+    \right)
+\end{equation}
+
+Note that this is only considering a homogeneous equation. If it is non-homogeneous, you will have an extra term in the final step and will need a matrix of the form  $\bm{x'} = \bm{A}\bm{x} + \bm{g}$ as shown in the answer to exercise 4(b) on page 5 of the PDF.
+
+So why do we want to do this? Well, notice that in this example we started with a complicated 3rd-order ODE and reduced it into 3 1st-order ODE's. Similarly, if we started with a 2nd-order ODE, we could reduce the equation to 2 1st-order ODE's. In general, for an nth-order ODE we can reduce it to $n$ 1st-order ODE's. If we can then learn how to solve simultanious sets of 1st-order ODE's, we have a powerful method of increasing our understanding (and even solving) difficult higher-order ODE's. 
+
+Similarly, if you are given a system of 2 1st-order ODE's, you can know that it can form a single 2nd-order ODE. 
+
+\subsection*{Challenge}
+Write the following ODE's in matrix form:
+
+1) $2 y'' + 4 y' - 6 y = 0$
+
+2) $y'' + y = Cos(t)$
+
+Complete exercises 1 and 2 on page 5 of the PDF.
+
+\subsection*{Solutions}
+To check your answers, sum the values of all the terms in your matrix $\bm{A}$.
+
+1) 2
+
+2) -1 (remember there is also a $+\bm{g}$ column-vector added to $\bm{A}\bm{x}$ too)
+
+The answers to the PDF exercises are shown on page 5 of the PDF. Perhaps obviously, since you will not have the answers in a real-life/exam environment, please don't review each answer until completion. If you get stuck, be sure to review your notes (especially the worked-examples in the PDF) rather than the answers, to facilitate deep learning. 
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\input{matricies}
+\section{Matricies}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item PDF: Pages 6-17 of the PDF \url{http://www.math.psu.edu/tseng/class/Math251/Notes-LinearSystems.pdf}
+\end{itemize}
+
+\subsection*{Comment}
+It is worth spending some time getting comfortable with manipulating matricies, since this is an indispensible basis for the work that is about to follow. The PDF gives a quick introduction to matricies. For a more thorough introduction, the Khan Academy playlist on linear algebra [1] is excellent, although beyond the scope of this course.
+
+One note to deal with any confusion arising with regard to eigenvectors with matricies with zeros. For $(A-rI)$ equal to something like
+\begin{equation}
+\left(
+    \begin{array}{cc}
+        0 & 0 \\
+        1 & 2
+    \end{array}
+\right)
+\end{equation}
+the top row can be ignored since any $x_1$ and $x_2$ will satisfy the top row.
+
+Similarly, for a case such as
+\begin{equation}
+\left(
+    \begin{array}{cc}
+        2 & 0 \\
+        2 & 0
+    \end{array}
+\right)
+\end{equation}
+you will have
+\begin{align}
+    2 x_1 + 0 x_2 &= 0 \\
+    2 x_1 &= 0 \\
+    x_1 &= 0
+\end{align}
+which is satisfied by
+\begin{equation}
+\left(
+    \begin{array}{c}
+        0 \\
+        1
+    \end{array}
+\right)
+\end{equation}
+(where the $1$ could in principle be any number, but is the minimum integer that satisfies the condition.)
+
+Finally, note that $(A-rI) = ((a, b), (c, d))$ will give you two equivalent formulas $a x_1 + b x_2 = 0$ and $c x_1 + b x_2 = 0$, even if they may appear different on first glance. If you want, you can prove to yourself that they are the same by multiplying the bottom row by $a/c$.
+
+\vspace{0.2cm}
+\noindent [1] \url{https://www.khanacademy.org/math/linear-algebra/alternate-bases}
+
+\subsection*{Challenges}
+Complete exersizes 1, 2, 3, 4 (I and II only) and 5 on page 18 of the PDF.
+
+1. Calculate the eigenvectors and eigenvalues of
+$\displaystyle
+\left(
+    \begin{array}{cc}
+        -3 & 6 \\
+        -3 & 3
+    \end{array}
+\right)$
+
+
+\subsection*{Solutions}
+The answers to the PDF exercises are shown on page 18 of the PDF. Perhaps obviously, since you will not have the answers in a real-life/exam environment, please don't review each answer until completion. If you get stuck, be sure to review your notes (especially the worked-examples in the PDF) rather than the answers, to facilitate deep learning. 
+
+The solution to question 1 above can be found on the next page.
+
+\newpage
+1. Eigenvaluesof $\pm3i$. Eigenvectors of $(s,s(-1-i)/2)$ where $s$ is any multiplier (real or complex!) and $(s,s(-1+i)/2)$.
+
+
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Solving systems of ODE's}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Pages 6-31 of the PDF \url{http://www.math.psu.edu/tseng/class/Math251/Notes-LinearSystems.pdf} 
+\end{itemize}
+
+\subsection*{Challenge}
+Complete at least exercises 1-5 on page 32-33 of the PDF.
+
+\subsection*{Solutions}
+The answers are shown on page 33-34 of the PDF. Perhaps obviously, since you will not have the answers in a real-life/exam environment, please don't review each answer until completion. If you get stuck, be sure to review your notes (especially the worked-examples in the PDF) rather than the answers, to facilitate deep learning. 
+\fi
