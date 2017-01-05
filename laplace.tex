@@ -106,7 +106,7 @@ as $t \rightarrow 0$.
 \begin{equation}
     \frac{t^n}{e^{st}}
 \end{equation}
-if we differentiate $n$ times with respect to $t$, what is the power of $t$ in the numerator? Note that $e^{st}$ is always constant, so by repeated differentiation we can apply L'H\^opital's rule even for $t^n$.
+if we apply L'H\^opital's rule $n$ times with respect to $t$, what is the power of $t$ in the numerator? Note that $e^{st}$ is always constant, so by repeated differentiation we can apply L'H\^opital's rule even for $t^n$.
 
 \subsection*{Solution}
 1. \hash{ww}{76c8d4}
@@ -303,7 +303,7 @@ Solve
     y''+5y'+4y=100e^{-2t}
 \end{equation}
 
-for $y$. Since the algebra gets very messy, you may use the following equation to help you:
+for $y$, given initial conditions $y(0)=-1$ and $y'(0)=0$. Since the algebra gets very messy, you may use the following equation to help you:
 \begin{equation}
     \frac{s^2-7s+90}{(s+1)(s+2)(s+4)} = \frac{32}{s+1} - \frac{50}{s+2} + \frac{17}{s+4}
 \end{equation}
@@ -324,7 +324,7 @@ In past challenges we studied the Laplace transform for $U_c f(t-c)$. So if $f(t
 
 This challenge is interesting because unlike previous challenges, it is the first challenge where we really have no other option but to use the Laplace transform method, and so you can appreciate its power. In this challenge, we have a 2nd-order homogeneous equation (unforced oscillation) until $t=5$ when we apply a constant force. You will find your answer leads to a constant oscillation. But how can it lead to a constant oscillation if we are constantly applying a force? Shouldn't the oscillation slowly increase in magnitude due to the energy that is being added to the system from the constant force being applied? The answer is of course no: we take just as much energy out of the system when the velocity is in the opposite direction to the force as we add to the system when the velocity is in the same direction as the applied force.
 
-One important point to note is that the inverse Laplace transform of $e^{-cs} s^2/(s^2+a^2)$ is $\lap{U_c Cos(a[t-c])}$ (not $\lap{U_c Cos([at-c])}$).
+One important point to note is that the inverse Laplace transform of $e^{-cs} s/(s^2+a^2)$ is $\lap{U_c Cos(a[t-c])}$ (not $\lap{U_c Cos([at-c])}$).
 
 \subsection*{Challenge}
 Solve
