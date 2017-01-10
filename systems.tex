@@ -375,24 +375,57 @@ Finally, note that $(A-rI) = ((a, b), (c, d))$ will give you two equivalent form
 \subsection*{Challenges}
 Complete exersizes 1, 2, 3, 4 (I and II only) and 5 on page 18 of the PDF.
 
-1. Calculate the eigenvectors and eigenvalues of
-$\displaystyle
-\left(
-    \begin{array}{cc}
-        -3 & 6 \\
-        -3 & 3
-    \end{array}
-\right)$
-
-
 \subsection*{Solutions}
 The answers to the PDF exercises are shown on page 18 of the PDF. Perhaps obviously, since you will not have the answers in a real-life/exam environment, please don't review each answer until completion. If you get stuck, be sure to review your notes (especially the worked-examples in the PDF) rather than the answers, to facilitate deep learning. 
 
 The solution to question 1 above can be found on the next page.
 
-\newpage
-1. Eigenvaluesof $\pm3i$. Eigenvectors of $(s,s(-1-i)/2)$ where $s$ is any multiplier (real or complex!) and $(s,s(-1+i)/2)$.
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Eigenvector equivalence}
+
+\subsection*{Comment}
+Considering the matrix
+\begin{equation}
+    A = \left(
+        \begin{array}{cc}
+            1 & 2 \\
+            -3 & -4
+        \end{array}
+    \right)
+\end{equation}
+The eigvenvalues are -2 and -1. Considering the eigenvalue -2, 
+\begin{equation}
+    A - Ir = \left(
+        \begin{array}{cc}
+            3 & 2 \\
+            -3 & -2
+        \end{array}
+    \right)
+\end{equation}
+To determine the eigenvector we can either take the top or bottom row in the calculation $(A - Ir)x = 0$.
+The top and bottom row appear with different numbers but it is easy to see that they yield multiples of the same eigenvector and are therefore equivalent.
+
+Complex eigenvectors are no different, but it can sometimes be hard to see that they are indeed equivalent.
+
+\subsection*{Challenge}
+Show that the equation $(A - Ir)\bm{x} = {0}$, where
+\begin{equation}
+     A-Ir = \left(
+        \begin{array}{cc}
+            -3 -3i & 6 \\
+            -3 & 3-3i
+        \end{array}
+    \right)
+\end{equation}
+yields the same eigenvector, irrespective of whether you calculate the eigenvector using the top or bottom row of $(A-Ir)$. You may find that one of the representations of the eigenvectors looks like $(i-1,1)$.
+
+\subsection*{Solutions}
+You should be able to generate two eigenvectors by using the top and bottom rows of the $A-Ir$ matrix, and show that they are infact the same eigenvector by multiplying by an equivalent (imaginary) number. Please discuss with your partner or the teacher in class if you have trouble.
 
 
 
@@ -408,7 +441,7 @@ The solution to question 1 above can be found on the next page.
 \end{itemize}
 
 \subsection*{Challenge}
-Complete at least exercises 1-5 on page 32-33 of the PDF.
+Complete at least exercises 1-10 on page 32-33 of the PDF.
 
 \subsection*{Solutions}
 The answers are shown on page 33-34 of the PDF. Perhaps obviously, since you will not have the answers in a real-life/exam environment, please don't review each answer until completion. If you get stuck, be sure to review your notes (especially the worked-examples in the PDF) rather than the answers, to facilitate deep learning. 
