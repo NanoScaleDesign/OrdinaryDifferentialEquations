@@ -152,6 +152,7 @@ Non-homogeneous: \hash{iii}{d51f57}
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Basis for creating a system of equations from a single ODE}
+\label{sec:systembasis}
 
 \subsection*{Resources}
 \begin{itemize}
@@ -159,9 +160,11 @@ Non-homogeneous: \hash{iii}{d51f57}
 \end{itemize}
 
 \subsection*{Comment}
+\emph{Note that the notation $y^{(2)}$ means ``the 2nd differential of y'' while the notation $y^2$ (without the brackets around the $2$) means ``y-squared''.}
+
 Considering the general form of an nth-order linear equation,
 \begin{equation}
-    a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y^1 + a_0 y = g(t)
+    a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y^{(1)} + a_0 y = g(t)
 \end{equation}
 we substitute $x_1=y$, $x_2=y'$, \ldots, $x_n=y^{(n-1)}$ and $x_n'=y^{(n)}$.
 
@@ -433,6 +436,7 @@ You should be able to generate two eigenvectors by using the top and bottom rows
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Solving systems of ODE's}
+\label{sec:systemsolving}
 
 \subsection*{Resources}
 \begin{itemize}
@@ -446,3 +450,115 @@ Complete at least exercises 1-10 on page 32-33 of the PDF.
 It might not be clear to you why solutions involve vectors and what this means physically, but for now, please just get used to solving equations in this fashion.
 
 The answers are shown on page 33-34 of the PDF. Perhaps obviously, since you will not have the answers in a real-life/exam environment, please don't review each answer until completion. If you get stuck, be sure to review your notes (especially the worked-examples in the PDF) rather than the answers, to facilitate deep learning. 
+
+%NT: Add something about intersection of graphs? https://en.wikipedia.org/wiki/System_of_linear_equations
+% Good resources: http://www.math.psu.edu/tseng/class/Math251/
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Graphs of system solutions}
+
+\subsection*{Resources}
+In the previous challenge you determined $x_1$ and $x_2$ with solutions such as
+\begin{equation}
+    \bm{x} = \matrixcrr{x_1}{x_2} = c_1 \matrixcrr{-1}{6} e^{-6t} + c_2 \matrixcrr{1}{1} e^t
+\end{equation}
+
+or written another way:
+\begin{align}
+    x_1 &= -c_1 e^{-6t} + c_2 e^t \label{eqn:sysgraphx1} \\
+    x_2 &= 6 c_1 e^{-6t} + c_2 e^t \label{eqn:sysgraphx2} 
+\end{align}
+
+This particular system arose from a 2nd-order differential equation:
+\begin{equation}
+    y'' + 5y' - 6y = 0 \label{eqn:sys2ndoode}
+\end{equation}
+
+we have learned in challenge \ref{sec:systembasis} that this 2nd-order equation can be written in terms of $x$:
+
+\begin{equation}
+    x_3 + 5x_2 - 6 x_1 = 0
+\end{equation}
+
+Thus we remember that $x_1 = y$ and $x_2 = y'$, allowing equations \ref{eqn:sysgraphx1} and \ref{eqn:sysgraphx2} to be written as
+\begin{align}
+    y &= -c_1 e^{-6t} + c_2 e^t \label{eqn:syspos} \\
+    y' &= 6 c_1 e^{-6t} + c_2 e^t \label{eqn:sysvel} 
+\end{align}
+
+Perhaps, for example, the original 2nd-order ODE (equation \ref{eqn:sys2ndoode}) represented the position of an atom on an axis with respect to time. Then equation \ref{eqn:syspos} represents position at time $t$ while equation \ref{eqn:sysvel} represents the velocity (or more commonly, when multiplied by the mass, represents the momentum).
+
+Thus the graph represents the variation of momentum (velocity) with position, called the ``phase-space'' of the system. A specific trajectory can be followed given boundary conditions that determine the starting condition. For example, if the particle at time $t=0$ is known to have position $y=1$ and velocity $y'=2$ we can impose the boundary condition
+\begin{equation}
+    \bm{x}(0) = \matrixcrr{1}{2}
+\end{equation}
+to determine the coefficients $c_1$ and $c_2$ and obtain a unique trajectory.
+
+We can then plot the phase-space for various boundary conditions. In the graph below, we show examples where $c_1 = c_2 = \{0, 0.5, 1, 1.5, 2\}$:
+
+\includegraphics[scale=0.7]{phase_space_1.png}
+
+You can note that as $t$ increases, the term $e^{-6t}$ goes to zero leaving the $e^t$ dominant, and since this features in both $y$ and $y'$, you get $y \propto y'$ for large $t$. % NT: Check this: As expected for this negatively-damped equation, both the velocity and position increase rapidly with time.
+
+The examples we are considering here are relatively simple, however this can be used to identify complex and chaotic phenomena visually. For example, considering a pendulum gently swinging backwards and forwards, it is possible to trace out the phase-space as shown here:
+
+\includegraphics[scale=0.4]{pendulum_gentle.png}\\
+\emph{\small{Source: \url{https://commons.wikimedia.org/wiki/File:Pendulum_phase_portrait_illustration.svg}, Wikipedia user Krishnavedala}}
+
+If you increase the speed of the pendulum, at some critical point, instead of swinging back to the original position it will start whirring round and round. Expressed in terms of vertical angle and angular velocity, the graph becomes:
+
+\includegraphics[scale=1]{pendulum_fullphase.png}\\
+\emph{\small{Source: \url{https://commons.wikimedia.org/wiki/File:Pendulumphase.png}}}
+
+At low velocities the pendulum swings back and forth (blue circles, angular velocity both positive and negative), but at high velocities, the angular velocity stays positive (or negative) and the pendulum whirs round and round in one direction (blue wavy lines). Note that position $\theta = \pi$ is when the rigid pendulum is pointing exactly upwards. So with no momentum it is stationary here, albeit unstable, because with a tiny velocity it will perform a full loop, slowing (but not stopping) as it reaches the top again.
+
+\subsection*{Challenge}
+1. The graphs below represent the solutions to the exercises 1-5 in challenge \ref{sec:systemsolving}.
+Place the graphs below in the same order as exercises 1-5. Note that in order to maintain clarity, the graphs are not necessarily plotted over the same time interval $t$.
+
+\begin{tabular}{cc}
+    \includegraphics[scale=0.6]{phase_space_a.png} &
+    \includegraphics[scale=0.6]{phase_space_b.png} \\
+    \includegraphics[scale=0.6]{phase_space_c.png} &
+    \includegraphics[scale=0.5]{phase_space_d.png} \\
+    \includegraphics[scale=0.6]{phase_space_e.png} &
+\end{tabular}
+
+\vspace{1cm}
+2. Considering the graph shown earlier of angular momentum vs angle for a rigid pendulum, add the points of the following true statements:
+
+\textbf{1 point} An initial angular velocity of 1 unit results in whirring circular motion irrespective of the starting angle.
+
+\textbf{2 points} An initial angular velocity of -2.5 units results in whirring circular motion irrespective of the starting angle.
+
+\textbf{4 points} An initial angle of $\pi/2$ combined with an angular velocity of 1 unit results in periodic swinging motion.
+
+\textbf{8 points} An initial angle of $\pi/2$ combined with an angular velocity of 1 unit results in circular whirring.
+
+\textbf{16 points} An initial angle of $0$ combined with an angular velocity of 0 units results in periodic swinging motion.
+
+\textbf{32 points} An initial angle of $0$ combined with an angular velocity of 0 units results in a stationary system.
+
+\textbf{64 points} An initial angle of $\pi$ combined with an angular velocity of 0 units results in a stationary system.
+
+\textbf{128 points} An initial angle of $\pi/2$ combined with an angular velocity of 0 units results in a stationary system.
+
+\textbf{256 points} An initial angular velocity of 3 units results in whirring circular motion in the same direction as an initial angular velocity of -3 units.
+
+\textbf{512 points} An initial angular velocity of 3 units results in whirring circular motion in the opposite direction as an initial angular velocity of -3 units.
+
+\subsection*{Solutions}
+(eg, ``abcde'')
+
+1. \hash{jjj}{778bbb}
+
+2. (enter number to 2 decimal places, as usual) \hash{kkk}{7febe0}
+
+
+% NT: bifurcation? https://en.wikipedia.org/wiki/Hopf_bifurcation
+% Other Pendulum resources of interest: http://math.stackexchange.com/questions/666806/nonlinear-pendulum and https://www.youtube.com/watch?v=6KSXLGHsrrs
