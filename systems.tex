@@ -168,7 +168,10 @@ Considering the general form of an nth-order linear equation,
 \end{equation}
 we substitute $x_1=y$, $x_2=y'$, \ldots, $x_n=y^{(n-1)}$ and $x_n'=y^{(n)}$.
 
-When replacing a $y$-term by an $x$ term, the $n$ in $x_n$ corresponds to the number of times $y$ is differentiated, plus one. So $x_n$ corresponds to $y$ being differentiated $(n-1)$ times. Similarly, $x_n'$ corresponds to the differentiation one more time of $y^{(n-1)}$ (ie, $y^{(n)}$). Therefore, if the $y$-terms are replaced by $x'$ terms, then the $n$ in $x_n'$ corresponds to the number of times $y$ is differentiated (ie, $y^{(n)}$).
+When replacing a $y$-term by an $x$ term, the $n$ in $x_n$ corresponds to one more than the number of times $y$ is differentiated. So $x_{n+1}$ corresponds to $y$ being differentiated $n$ times and $x_n$ corresponds to $y$ being differentiated $n-1$ times. So $x_2$ corresponds to $y^{(1)}$ (differentiated 1 time) and $x_1$ corresponds to $y$ (differentiated 0 times).
+
+Note that $x_n'$ is one more differential than $x_n$, so $x_n'$ corresponds to $(y^{(n-1)})' = y^{(n)}$.
+So the $n$ in $x_n'$ corresponds to the number of times $y$ is differentiated (ie, $y^{(n)}$).
 
 The examples on page 3 are clearer after reading page 4, so I encourage you to read page 4 before considering the examples.
 
@@ -528,6 +531,7 @@ Place the graphs below in the same order as exercises 1-5. Note that in order to
     \includegraphics[scale=0.5]{phase_space_d.png} \\
     \includegraphics[scale=0.6]{phase_space_e.png} &
 \end{tabular}
+% NT: Add graphs that have the same starting position so students need to check the shape of the graph, as well as the t=0 position
 
 \vspace{1cm}
 2. Considering the graph shown earlier of angular momentum vs angle for a rigid pendulum, add the points of the following true statements:
@@ -538,7 +542,7 @@ Place the graphs below in the same order as exercises 1-5. Note that in order to
 
 \textbf{4 points} An initial angle of $\pi/2$ combined with an angular velocity of 1 unit results in periodic swinging motion.
 
-\textbf{8 points} An initial angle of $\pi/2$ combined with an angular velocity of 1 unit results in circular whirring.
+\textbf{8 points} An initial angle of $\pi/2$ combined with an angular velocity of 1 unit results in circular whirring motion.
 
 \textbf{16 points} An initial angle of $0$ combined with an angular velocity of 0 units results in periodic swinging motion.
 
@@ -553,9 +557,9 @@ Place the graphs below in the same order as exercises 1-5. Note that in order to
 \textbf{512 points} An initial angular velocity of 3 units results in whirring circular motion in the opposite direction as an initial angular velocity of -3 units.
 
 \subsection*{Solutions}
-(eg, ``abcde'')
 
-1. \hash{jjj}{778bbb}
+1. (eg, ``abcde'') \hash{jjj}{778bbb}
+
 
 2. (enter number to 2 decimal places, as usual) \hash{kkk}{7febe0}
 
