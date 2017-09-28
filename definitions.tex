@@ -21,9 +21,12 @@ What is the sum of the orders of the following equations?
 \end{equation}
 
 \subsection*{Solution}
-\six{}
+X = Your solution\\
+Form: Integer\\
+Place the indicated letter in front of the number\\
+Example: aX where $X=46$ is entered as \href{http://www.wolframalpha.com/input/?i=md5+hash+of+\%22a46\%22}{a46}
 
-\hash{e}{adb5a9}
+hash of eX = 492585
 
 
 
@@ -31,28 +34,58 @@ What is the sum of the orders of the following equations?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Linear equations}
-% NT Better reference: http://math.stackexchange.com/questions/414597/linear-vs-nonlinear-differential-equation/414598#414598
-
-\subsection*{Resources}
-\begin{itemize}
-    \item Video: \url{https://www.youtube.com/watch?v=dwNMEMOGO_o}
-    \item Text: \url{http://www.myphysicslab.com/classify_diff_eq.html}
-    \item Text: \url{http://tutorial.math.lamar.edu/Classes/DE/Definitions.aspx}
-\end{itemize}
+\section{Identifying linear and non-linear differential equations}
 
 \subsection*{Comment}
-Using a function $x$ dependent on time $t$ as an example, a differential equation is defined as being linear if it can be written in the form
+Being able to identify linear and non-linear ODE's will help you understand how to approach different problems.
 
+A function is linear if it satisfies the following condition for all $y_1$ and $y_2$:
 \begin{equation}
-    f_n(t) \frac{d^nx}{d t^n} + \dots + f_1(t) \frac{dx}{dt} + f_0(t) x + f_c(t) = C
+    \label{eq:lindef}
+    f(y_1 + y_2)  = f(y_1) + f(y_2)
 \end{equation}
 
-Here, $f_n(t)$ is a function of time only, such as $5t$ or $2/t^2$ or may even be constant with time (eg, $3$).
-Any of the $f_n$'s and the constant $C$ may be zero.
-If it is possible to arrange an equation into the above form, then the equation must be linear.
-So for a linear equation, $x(t)$, $x'(t)$, $t x(t)$, $3t^2 x'''(t)$ are linear terms in $x$, but $x(t)^2$, $x(t) x'(t)$ and $5 t Tan(x)$ are non-linear terms.
+For example,
+\begin{equation*}
+    y = 5x^2 + 4
+\end{equation*}
+is trivally linear, because if $f(y) = y$,
+\begin{equation*}
+    f(y_1 + y_2) = (y_1+y_2) = y_1 + y_2 = f(y_1) + f(y_2)
+\end{equation*}
+
+The function on the left side does not have to be so simple. It just has to be a function of $y$. For example, the equation
+\begin{equation*}
+    y'' - 4yx = ln x - y
+\end{equation*}
+is more complex. However it is still linear. Rearranging to collect all the $y$-terms together:
+\begin{equation*}
+    f(y) = y'' - 4yx + y = ln x
+\end{equation*}
+linearity can be proved:
+\begin{align*}
+    f(y_1 + y_2) &= (y_1 + y_2)'' - 4(y_1 + y_2)x + (y_1 + y_2) \\
+                 &= y_1''+ y_2'' - 4y_1x + 4y_2x + y_1 + y_2 \\
+                 &= y_1 + 3y_1x + y_1 + y_2 + 3y_2x + y_2 \\
+                 &= f(y_1) + f(y_2)
+\end{align*}
+
+For non-linear equations however, equation \ref{eq:lindef} does not hold true. For example,
+\begin{equation*}
+    5 + yy' = x - y
+\end{equation*}
+can be rearranged to isolate all the y-terms on the LHS as
+\begin{equation*}
+    f(y) = yy' + y = x - 5
+\end{equation*}
+however it can easily be seen than \ref{eq:lindef} does not hold true:
+\begin{align*}
+    f(y_1 + y_2) &= (y_1 + y_2)(y_1+y_2)' + (y_1 + y_2) \\
+                 &= y_1 y_1' + y_2 y_2' + y_1 y_2' + y_2 y_1' + y_1 + y_2 \\
+                 &= y_1 y_1' + y_1 + y_2 y_2' + y_2 + y_1 y_2' + y_2 y_1' \\
+                 &= f(y_1) + f(y_2) + y_1 y_2' + y_2 y_1'
+\end{align*}
+which does not satisfy equation \ref{eq:lindef} for all $y_1$ and $y_2$.
 
 \subsection*{Challenge}
 Sum the points corresponding to the equations that are linear:
@@ -70,9 +103,32 @@ Sum the points corresponding to the equations that are linear:
 32 points: $\displaystyle t x'(t) - x(t) = 0$.
 
 \subsection*{Solution}
-\six{}
+X = Your solution\\
+Form: Integer\\
+Place the indicated letter in front of the number\\
+Example: aX where $X=46$ is entered as \href{http://www.wolframalpha.com/input/?i=md5+hash+of+\%22a46\%22}{a46}
 
-\hash{r}{9aea7d}
+hash of rX = f5d2c0
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Linear differential equations vs non-linear differential equations}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Wikipedia: \url{https://en.wikipedia.org/wiki/Nonlinear_system#Nonlinear_differential_equations}
+    \item Wikipedia: \url{https://en.wikipedia.org/wiki/Linear_differential_equation}
+\end{itemize}
+
+\subsection*{Challenge}
+Write no-more than 1 short paragraph describing in qualitative terms the difference between a linear and non-linear differential equation.
+
+\subsection*{Solution}
+Please compare with your partner in class and discuss with the teacher if you are unsure.
 
 
 
@@ -105,9 +161,9 @@ is a solution to the equation
 and state the value of $x$ for which the solution is undefined.
 
 \subsection*{Solution}
-Value of $x$ for which solution is undefined: \six{}
+Value of $x$ for which solution is undefined:
 
-\hash{t}{c69a20}
+\soltwodp{t}{829f33}
 
 
 
@@ -140,6 +196,4 @@ is a solution to the equation
 and state the range of x for which the solution is valid. Enter the value of the lower range as the solution below.
 
 \subsection*{Solution}
-\six{}
-
-\hash{y}{8c8c08}
+\soltwodp{y}{d96920}

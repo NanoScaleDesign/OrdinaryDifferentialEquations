@@ -18,14 +18,13 @@
 \usepackage{booktabs} % Merge cells with multicolumn
 \usepackage{bm} % Bold-maths \bm command
 
-\newcommand{\disctime}{10:30 to 12:00 }
+\newcommand{\courseyear}{2017 }
+\newcommand{\disctime}{14:50 to 16:20 }
 \newcommand{\discdays}{Fridays }
-\newcommand{\discroom}{W4-529}
-\newcommand{\discexam}{10th February 2017}
+\newcommand{\discroom}{Centre Zone 1409}
 \newcommand{\course}{Ordinary Differential Equations }
 \newcommand{\courseurl}{ordinary-differential-equations}
 \newcommand{\nensei}{2nd}
-\newcommand{\assstart}{21 October}
 
 \newcommand{\lap}[1]{\mathcal{L}\{#1\}}
 
@@ -34,6 +33,8 @@
 \newcommand{\timebox}{\vfill Study-time (from end of previous challenge to end of this challenge): \underline{\hspace{1cm} minutes}}
 \newcommand{\matrixcrr}[2]{\left(\begin{array}{c}{#1}\\{#2}\end{array}\right)}
 
+\newcommand{\soltwodp}[2]{X = Your solution\\Form: Decimal to 2 decimal places.\\Place the indicated letter in front of the number.\\Example: aX where $X=46.00$ is entered as \href{http://www.wolframalpha.com/input/?i=md5+hash+of+\%22a46.00\%22}{a46.00}\\\\Hash of {#1}X = {#2}}
+\newcommand{\solstr}[2]{X = Your solution\\Form: String.\\Place the indicated letter in front of the string.\\Example: aX where $X=abcdef$ is entered as \href{http://www.wolframalpha.com/input/?i=md5+hash+of+\%22a46.00\%22}{aabcdef}\\\\Hash of {#1}X = {#2}}
 
 \graphicspath{{Images/}}
 
@@ -46,7 +47,7 @@
         \Huge
         \textbf{Ordinary Differential Equations}
 
-        Autumn 2016
+        Autumn \courseyear
 
         \vspace{1.5cm}
         \Large
@@ -78,22 +79,26 @@
 \input{instructions}
 \input{timetable}
 \input{hash}
-\input{coursework}
+\section{Coursework}
+Coursework information will be placed here at a later date.
+%\input{coursework}
 
 % NT: Add hash-practise\ldots
-\chapter{Definitions}
-\include{definitions}
+\chapter{Hash practise}
+\include{hashpractise}
+%\chapter{Definitions}
+%\include{definitions}
 % In addition, cover initial conditions
-\chapter{1st-order differential equations}
-\include{1storder}
-\chapter{2nd-order differential equations}
-\include{2ndorder}
-\chapter{Laplace transformation}
-\include{laplace}
-\chapter{Systems of ODE's}
-\include{systems}
-\appendix 
-\chapter{Mid-term exam questions}
-\include{mid_term_exam}
+%\chapter{1st-order differential equations}
+%\include{1storder}
+%\chapter{2nd-order differential equations}
+%\include{2ndorder}
+%\chapter{Laplace transformation}
+%\include{laplace}
+%\chapter{Systems of ODE's}
+%\include{systems}
+%\appendix
+%\chapter{Mid-term exam questions}
+%\include{mid_term_exam}
 
 \end{document}
