@@ -65,8 +65,8 @@ is more complex. However it is still linear. Rearranging to collect all the $y$-
 linearity can be proved:
 \begin{align*}
     f(y_1 + y_2) &= (y_1 + y_2)'' - 4(y_1 + y_2)x + (y_1 + y_2) \\
-                 &= y_1''+ y_2'' - 4y_1x + 4y_2x + y_1 + y_2 \\
-                 &= y_1 + 3y_1x + y_1 + y_2 + 3y_2x + y_2 \\
+                 &= y_1'' + y_2'' - 4y_1x - 4y_2x + y_1 + y_2 \\
+                 &= y_1'' - 4y_1x + y_1 + y_2'' - 4y_2x + y_2 \\
                  &= f(y_1) + f(y_2)
 \end{align*}
 
@@ -78,7 +78,7 @@ can be rearranged to isolate all the y-terms on the LHS as
 \begin{equation*}
     f(y) = yy' + y = x - 5
 \end{equation*}
-however it can easily be seen than \ref{eq:lindef} does not hold true:
+and then
 \begin{align*}
     f(y_1 + y_2) &= (y_1 + y_2)(y_1+y_2)' + (y_1 + y_2) \\
                  &= y_1 y_1' + y_2 y_2' + y_1 y_2' + y_2 y_1' + y_1 + y_2 \\

@@ -1,4 +1,5 @@
 \section{Determining a simple DE from a description}
+% NT: Add Khan example and then do a different but similar-style problem.
 
 \subsection*{Resources}
 \begin{itemize}
@@ -58,40 +59,12 @@ Try drawing the slope field for at least 3 of the equations given below (your ch
 
 
 
-\iffalse
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Solving a simple 1st-order linear equation}
-
-\subsection*{Resources}
-\begin{itemize}
-    \item Video: \url{https://www.khanacademy.org/math/differential-equations/first-order-differential-equations/differential-equations-intro/v/finding-particular-linear-solution-to-differential-equation}
-\end{itemize}
-
-\subsection*{Comment}
-It's not easy to see when equations can be solved simply, like in the challenge below, and when they can not. But for a 1st-order linear differential equation, this method is often good to try first. If it's not 1st order and not linear, you know to try a different approach.
-
-\subsection*{Challenge}
-Determine the value of $y(x=1)$ for the following equation:
-
-\begin{equation}
-    y'=2y-5x+2
-\end{equation}
-
-\subsection*{Solution}
-\six{}
-
-\hash{u}{505c7b}
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Separable equations I}
+\label{sec:sepy}
 
 \subsection*{Resources}
 \begin{itemize}
@@ -100,18 +73,26 @@ Determine the value of $y(x=1)$ for the following equation:
     \item Text:\url{http://tutorial.math.lamar.edu/Classes/DE/Separable.aspx}
 \end{itemize}
 
-\subsection*{Challenge}
-Given the following equation:
+\subsection*{Comment}
+Let's start with a fundamental equation:
 \begin{equation}
-    r' = -Sin(\theta)
+    \frac{dy}{dt} = y
 \end{equation}
-Determine the function $r(\theta)$ that passes through the point (0,1) in $\theta-r$ space, and then solve for $\theta = \pi/4$.
+This is saying that the slope (the rate of change of y) linearly depends on $y$. That is, that as the value of y increases, the slope also increases; a positive feedback loop. In fact, you get an exponentially-increasing function.
 
+So one aim of this course is to be able to solve such equations mathematically. But I also want you to understand the ``physical'' meaning of the relation between $y$ and its slope, and how this leads to such a fundamental function such as an exponential.
+
+\subsection*{Challenge}
+Considering the equation
+\begin{equation}
+    \frac{dy}{dt} = y
+\end{equation}
+solve for $y$.
 
 \subsection*{Solution}
-\six{}
+To check your answer, solve for $y(5)$ given the initial condition $y(0) = 1$.
 
-\hash{i}{286117}
+$y(5) = 148.413$
 
 
 
@@ -129,16 +110,21 @@ Determine the function $r(\theta)$ that passes through the point (0,1) in $\thet
 \end{itemize}
 
 \subsection*{Challenge}
-Given the following equation:
+a) Now consider what is meant, physically speaking, by the relation:
 \begin{equation}
-    r' cot(\theta) + r = 2
+    \frac{dy}{dt} = -y
 \end{equation}
-Determine the function $r(\theta)$ that passes through the point (0,1) in $\theta-r$ space, and then solve for $\theta = \pi/4$.
+Why does it tend to zero for increasing $t$?
+
+b) Solve for $y$.
 
 \subsection*{Solution}
-\six{}
+a) Please compare your solution with your partner or discuss with the teacher.
 
-\hash{o}{87ee92}
+b) To check your answer, solve for $y(5)$ given the initial condition $y(0) = 1$.
+
+$y(5) = 0.00674$
+
 
 
 
@@ -156,29 +142,78 @@ Determine the function $r(\theta)$ that passes through the point (0,1) in $\thet
 \end{itemize}
 
 \subsection*{Challenge}
-Given the following equation:
+a) Now consider when the slope of $y$ not only depends on $y$ but also on $t$:
 \begin{equation}
-    y' x^2 - y = 0
+    \frac{dy}{dt} = ty
 \end{equation}
-Determine the function $y(x)$ that passes through the point $x=2,y=1$ and then solve for the given $x$ value. State the value of $x$ where the solution is undefined. % Would be nice to couple this with a field graph.
+
+b) or on a constant $a$:
+\begin{equation}
+    \frac{dy}{dt} = ay
+\end{equation}
+
+See how the feedback is greater or lesser, depending on the constant or variable placed in front of $y$?
 
 \subsection*{Solution}
-Solve for $x=4$:
+a) Solve for $y(5)$ under the initial condition $y(0)=1$
 
-\six{}
+268,337
 
-\hash{p}{7cb08e} 
+b) Solve for $y(5)$ under the initial condition $y(0)=1$ and with $a=2$
 
-Value of x where solution is undefined:
-
-\six{}
-
-\hash{a}{b30fe7} 
+22,026.5
 
 
 
 
-\stepcounter{section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Separable equations IV}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Video I: \url{https://www.khanacademy.org/math/differential-equations/first-order-differential-equations/separable-equations/v/separable-differential-equations-introduction} 
+    \item Video II: \url{https://www.khanacademy.org/math/differential-equations/first-order-differential-equations/separable-equations/v/particular-solution-to-differential-equation-example}
+    \item Text:\url{http://tutorial.math.lamar.edu/Classes/DE/Separable.aspx}
+\end{itemize}
+
+\subsection*{Challenge}
+Determine $y(t)$ for
+\begin{equation}
+    \frac{dy}{dt} = e^{t}
+\end{equation}
+
+Again, think about what is happening here. Do you see the link with challenge \ref{sec:sepy}? There we wrote in terms of $y$. Here we write in terms of $e^{t}$. Do you see they're the same thing?
+
+\subsection*{Solution}
+To check your answer, solve for $y(3)$ given the initial condition $y(0) = 1$.
+
+$y(3) = 20.09$
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Rate of growth}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Video: \url{https://www.khanacademy.org/math/differential-equations/first-order-differential-equations/logistic-differential-equation/v/modeling-population-with-differential-equations}
+\end{itemize}
+
+\subsection*{Comment}
+One interesting application of 1st-order differential equations is that of population growth.
+
+\subsection*{Challenge}
+Assuming there is no-limit on growth, a given bacteria would be able to reproduce at such a rate that the amount of bacteria measured in mg increases by 20\% every 25 hours. Derive an expression for the rate of growth.
+
+\subsection*{Solution}
+To check your answer, calculate the rate of growth when there are 20 mg of bacteria.
+
+0.146 mg/hour
 
 
 
@@ -190,22 +225,17 @@ Value of x where solution is undefined:
 
 \subsection*{Resources}
 \begin{itemize}
-    \item Videos: The 5 videos on the logistic differential equation and function starting at: \url{https://www.khanacademy.org/math/differential-equations/first-order-differential-equations/logistic-differential-equation/v/modeling-population-with-differential-equations}
+    \item Videos: The 4 remaining logistic differential equation videos starting at: \url{https://www.khanacademy.org/math/differential-equations/first-order-differential-equations/logistic-differential-equation/v/logistic-differential-equation-intuition}
 \end{itemize}
 
 \subsection*{Comment}
-The rate of growth can be calculated considering the equation $dN/dt=rN$. This was not clear in an earlier version of the challenge. The question has also been adjusted (100 mg instead of 300 mg) to minimise the chance of rounding errors effecting final answer. The hash-code has been updated to reflect this.
+We considered exponential growth, but in real life there is often a limit to this. This is where the logistic equation is useful.
 
 \subsection*{Challenge}
 Assuming there is no-limit on growth, a given bacteria would be able to reproduce at such a rate that the amount of bacteria measured in mg increases by 20\% every 25 hours. However, due to environmental factors the limiting (maximum) amount of bacteria that can exist in the system at any one time is 400 mg. Assuming an initial amount of bacteria of 20 mg, how much time, rounded to the nearest integer hours, must one wait to reach 100 mg of bacteria?
 
-\emph{Note: Be sure to maintain a sufficient number of significant figures in your numbers while performing the calculation.}
-
 \subsection*{Solution}
-\six{hours} (expressed as an integer - do not enter ``.00''.)
-
-\hash{d}{0eba84} 
-
+253.1 hours
 
 
 
@@ -216,11 +246,11 @@ Assuming there is no-limit on growth, a given bacteria would be able to reproduc
 
 \subsection*{Resources}
 \begin{itemize}
-    \item Text: \url{http://tutorial.math.lamar.edu/Classes/DE/EquilibriumSolutions.aspx}
     \item Wikipedia: \url{https://en.wikipedia.org/wiki/Autonomous_system_(mathematics)}
 \end{itemize}
 
 \subsection*{Challenge}
+The logistic equation is an example of an autonomous differential equation.
 Add the points of the autonomous differential equations in the following list:
 
 1 point: $y' = cos(y)-5$
@@ -236,14 +266,10 @@ Add the points of the autonomous differential equations in the following list:
 32 points: $y' = 1$
 
 \subsection*{Solution}
-\six{}
-
-\hash{f}{9bf043} 
-% Would be good to add some vector fields to show that it's independent of x.
+\solint{f}{1227c7}
 
 
-
-
+\iffalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
