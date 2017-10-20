@@ -39,68 +39,41 @@ hash of eX = 492585
 \subsection*{Comment}
 Being able to identify linear and non-linear ODE's will help you understand how to approach different problems.
 
-A function is linear if it satisfies the following condition for all $y_1$ and $y_2$:
-\begin{equation}
-    \label{eq:lindef}
-    f(y_1 + y_2)  = f(y_1) + f(y_2)
-\end{equation}
+Generally speaking, the differential equation is linear if the functions and orders of the differentials are linear. For example, 
 
-For example,
-\begin{equation*}
-    y = 5x^2 + 4
-\end{equation*}
-is trivally linear, because setting $f(y)$ to be equal to the LHS (which is only a function of $y$),
-\begin{equation*}
-    f(y_1 + y_2) = (y_1+y_2) = y_1 + y_2 = f(y_1) + f(y_2)
-\end{equation*}
-
-The function on the left side does not have to be so simple. It just has to be a function of $y$. For example, the equation
 \begin{equation*}
     y'' - 4yx = ln x - y
 \end{equation*}
-is more complex. However it is still linear. Rearranging to collect all the $y$-terms together:
+can be shown to be linear. Rearranging to collect all the $y$-terms together:
 \begin{equation*}
-    f(y) = y'' - 4yx + y = ln x
+    y'' - 4yx + y = ln x
 \end{equation*}
-linearity can be proved:
-\begin{align*}
-    f(y_1 + y_2) &= (y_1 + y_2)'' - 4(y_1 + y_2)x + (y_1 + y_2) \\
-                 &= y_1'' + y_2'' - 4y_1x - 4y_2x + y_1 + y_2 \\
-                 &= y_1'' - 4y_1x + y_1 + y_2'' - 4y_2x + y_2 \\
-                 &= f(y_1) + f(y_2)
-\end{align*}
+the dependent variable $y$ and its derivatives are each of the first degree and depend only on a constant or the independent variable.
 
-For non-linear equations however, equation \ref{eq:lindef} does not hold true. For example,
+An example of a non-linear equation however would be
 \begin{equation*}
     5 + yy' = x - y
 \end{equation*}
-can be rearranged to isolate all the y-terms on the LHS as
+or
 \begin{equation*}
-    f(y) = yy' + y = x - 5
+    yy' + y = x - 5
 \end{equation*}
-and then
-\begin{align*}
-    f(y_1 + y_2) &= (y_1 + y_2)(y_1+y_2)' + (y_1 + y_2) \\
-                 &= y_1 y_1' + y_2 y_2' + y_1 y_2' + y_2 y_1' + y_1 + y_2 \\
-                 &= y_1 y_1' + y_1 + y_2 y_2' + y_2 + y_1 y_2' + y_2 y_1' \\
-                 &= f(y_1) + f(y_2) + y_1 y_2' + y_2 y_1'
-\end{align*}
-which does not satisfy equation \ref{eq:lindef} for all $y_1$ and $y_2$.
+The fact that $y'$ is multiplied by $y$ results in a non-linear equation in $y$.
 
 \subsection*{Challenge}
 Sum the points corresponding to the equations that are linear. You may be able to judge some by eye, but you should prove mathematically that at least one of the equations are linear and at least one of the equations are non-linear.
 
-1 point: $\displaystyle \frac{dx}{dt} = 5t^3 + 3$.
+1 point: $\displaystyle \frac{dy}{dt} = 5t^3 + 3$.
 
-2 points: $\displaystyle cos(x) x'''(t) - x(t) = 25$.
+2 points: $\displaystyle cos(y) y'''(t) - y(t) = 25$.
 
-4 points: $\displaystyle \frac{d}{dt} \frac{d^2 x}{dt^2} = \frac{t^{-2}}{3}$.
+4 points: $\displaystyle \frac{d}{dt} \frac{d^2 y}{dt^2} = \frac{t^{-2}}{3}$.
 
-8 points: $\displaystyle x'(t) - sin(x(t)) = 0$.
+8 points: $\displaystyle y'(t) - sin(y(t)) = 0$.
 
-16 points: $\displaystyle x'(t) - x(t) = 0$.
+16 points: $\displaystyle y'(t) - y(t) = 0$.
 
-32 points: $\displaystyle t x'(t) - x(t) = 0$.
+32 points: $\displaystyle t y'(t) - y(t) = 0$.
 
 \subsection*{Solution}
 X = Your solution\\
