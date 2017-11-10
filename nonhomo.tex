@@ -6,21 +6,52 @@
 \subsection*{Resources}
 \begin{itemize}
     \item Video: All 4 Khan Academy videos starting at \url{https://www.khanacademy.org/math/differential-equations/second-order-differential-equations/undetermined-coefficients/v/undetermined-coefficients-1}
-    \item PDF: \url{http://www.math.psu.edu/tseng/class/Math251/Notes-2nd\%20order\%20ODE\%20pt2.pdf}
 \end{itemize}
 
 \subsection*{Comment}
 The 2nd-order equations we were considering until now were homogeneous equations (ie, the RHS was zero). We can now build upon this to expand our ability to solve non-homogeneous equations (ie, where the RHS of the equation is non-zero).
 
-The Khan Academy videos give an excellent initial introduction to the subject, and so please do take the time to view and take notes about all four videos in the series. The PDF listed above then allows us to develop our repertoire much further and explains very clearly about cases more-complicated than the videos. Please therefore make notes covering the material in the PDF from page 11 to onwards. Prior pages are largely covered by the videos.
+The Khan Academy videos give an excellent initial introduction to the subject, and so please do take the time to view and take notes about all four videos in the series.
 
-You may note that in the PDF, the particular solution is denoted by $Y$ while Sal Khan denotes it as $y_p$ in the videos.
+In the 4th video Mr Kahn describes about how it is possible to add solutions if there are multiple terms on the right. This occasionally causes confusion. Consider for example:
+
+\begin{equation}
+    y'' - 3y' - 4y = 2 \sin x
+\end{equation}
+
+This corresponds to the particular solution
+
+\begin{equation}
+    y_p = A \sin x + B \cos x
+\end{equation}
+
+A common point of confusion is about what to do in the case of something like
+\begin{equation}
+    \label{eq:particularconfusion}
+    y'' - 3y' - 4y = 2 \sin x + 2 \cos x
+\end{equation}
+
+Should you just write $y_p = (A \sin x + B \cos x) + (C \sin x + D \cos x)$? After all, you have two terms in equation \ref{eq:particularconfusion} (ie, $2 \sin x$ and $2 \cos x$). You can note however that $A \sin x + C \sin x$ simplifies to $E \sin x$ where $E$ is just another constant (in this case $A+B$) so in the end you will be left with $y_p = E \sin x + F \cos x$. So while it may be clearer to explicitly calculate coefficients for every term on the RHS, in many cases the terms will simplify.
+
 
 \subsection*{Challenge}
-Complete questions 1-4 on page 22 in the PDF. These first challenges cover the fundamental basic cases upon which all subsequent cases are built.
+Find the general solution of the following non-homogeneous differential equations:
+
+1. $y'' + 4y = 8$\\
+2. $y'' + 4y = 8t^2 - 20t + 8$\\
+3. $y'' + 4y = 5 \sin 3t - 5 \cos 3t$\\
+4. $y'' + 4y = 24 e^{-2t}$
 
 \subsection*{Solution}
-The questions in this challenge are taken from the PDF and the answers can be found on the last page. Perhaps obviously, since you will not have the answers in a real-life/exam environment, please don't review each answer until completion. If you get stuck, be sure to review your notes (especially the worked-examples in the PDF) rather than the answers, to facilitate deep learning. 
+The solutions are contained in the list on the next page in no particular order. Your answers should match one of the solutions given. Please try to not look at the solutions before completing the questions, since this will facilitate deep understanding and reproduce a real-life/exam environment.
+\newpage
+$y = C_1 \cos 2t + C_2 \sin 2t + 3e^{-2t}$\\ %4
+$y = C_1 \cos 2t + C_2 \sin 2t + 8e^{-2t}$\\
+$y = C_1 \cos 2t + C_2 \sin 2t + 2t^2 - 5t + 1$\\ %2
+$y = C_1 \cos 2t + C_2 \sin 2t + 3t^2 + t + 3$\\
+$y = C_1 \cos 2t + C_2 \sin 2t + \cos 3t - \sin 3t$\\ %3
+$y = C_1 \cos 2t + C_2 \sin 2t + 2$\\ %1
+$y = C_1 \cos 2t + C_2 \sin 2t + 5$\\
 
 
 
@@ -30,16 +61,34 @@ The questions in this challenge are taken from the PDF and the answers can be fo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Method of undetermined coefficients II}
 
-\subsection*{Resources}
-\begin{itemize}
-    \item PDF: \url{http://www.math.psu.edu/tseng/class/Math251/Notes-2nd\%20order\%20ODE\%20pt2.pdf}
-\end{itemize}
+\subsection*{Comment}
+The following pages go into more detail than the videos, considering a greater range of cases. You may note that here the particular solution is denoted by $Y$ while Sal Khan denoted it as $y_p$ in the videos.
+
+\emph{The following notes were developed by Zachary S. Tseng at Pennsylvania State University, USA (\url{http://www.math.psu.edu/tseng/}). Included here with kind permission.}
+
+\includepdf[pages=-,pagecommand={},width=\textwidth,nup=1x1,frame=true]{External/undetermined.pdf}
 
 \subsection*{Challenge}
-Continuing from the previous challenge, complete questions 5-10 on page 22 in the PDF. For at least 1 of these, make up some initial conditions (eg, $y(0)=1$, $y'(0)=2$) and try to solve for those conditions. These challenges introduce a range of more complex situations and thus provide excellent practise of the concepts covered. 
+The following challenges expand the range of problems to give you practise in a range of situations.
+
+1. $y'' + 4y = 8 \cos 2t$\\
+2. $y'' + 2y' = 2 te^{-t}$\\
+3. $y'' + 2y' = 6 e^{-2t}$\\
+4. $y'' + 2y' = 12 t^2$\\
+5. $y'' - 6y' - 7y = 13 \cos 2t + 34 \sin 2t$\\
+6. $y'' - 6y' - 7y = 8e^{-t} - 7t - 6$
 
 \subsection*{Solution}
-The questions in this challenge are taken from the PDF and the answers can be found on the last page. Perhaps obviously, since you will not have the answers in a real-life/exam environment, please don't review each answer until completion. If you get stuck, be sure to review your notes (especially the worked-examples in the PDF) rather than the answers, to facilitate deep learning. 
+The solutions are contained in the list on the next page in no particular order. Your answers should match one of the solutions given. Please try to not look at the solutions before completing the questions, since this will facilitate deep understanding and reproduce a real-life/exam environment.
+\newpage
+$y = C_1 \cos 2t + C_2 \sin 2t + 2t \sin2t$\\ %1
+$y = C_1 \cos 2t + C_2 \sin 2t + 8t \sin2t$\\
+$y = C_1 e^{-t} + C_2 e^{7t} + \cos 2t - 2 \sin 2t$\\ %5
+$y = C_1 e^{-2t} + C_2 + 2t^3 - 3t^2 + 3t$\\ %4
+$y = C_1 e^{-2t} + C_2 - 2te^{-t}$\\ %2
+$y = C_1 e^{-2t} + C_2 + 5te^{-t}$\\
+$y = C_1 e^{-2t} + C_2 - 3te^{-2t}$\\ %3
+$y = C_1 e^{-t} +C_2 e^{7t} + t -te^{-t}$\\ %6
 
 
 
@@ -47,20 +96,42 @@ The questions in this challenge are taken from the PDF and the answers can be fo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Method of undetermined coefficients III}
-
-\subsection*{Resources}
-\begin{itemize}
-    \item PDF: \url{http://www.math.psu.edu/tseng/class/Math251/Notes-2nd\%20order\%20ODE\%20pt2.pdf}
-\end{itemize}
+\section{Method of undetermined coefficients: Determining the ODE I}
 
 \subsection*{Comment}
 This challenge gives you useful practise of going the other way; determining a differential equation that describes a given solution. This can be a little confusing at first, so take time to understand where things originate from.
 
 \subsection*{Challenge}
-Complete challenges 19 and 20 from page 23 of the PDF.
+Determine the 2nd-order linear differential equation which has the general solution
+\begin{equation}
+    y = C_1 \cos 4t + C_2 \sin 4t - e^t \sin 2t
+\end{equation}
 
 \subsection*{Solution}
-The questions in this challenge are taken from the PDF and the answers can be found on the last page. Perhaps obviously, since you will not have the answers in a real-life/exam environment, please don't review each answer until completion. If you get stuck, be sure to review your notes (especially the worked-examples in the PDF) rather than the answers, to facilitate deep learning. 
+The solution is given on the next page. Please try to not look at the solution before completing the questions, since this will facilitate deep understanding and reproduce a real-life/exam environment.
+\newpage
+
+$y'' + 16y = -4 e^t \cos 2t - 13 e^t \sin 2t$
 
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Method of undetermined coefficients: Determining the ODE II}
+
+\subsection*{Comment}
+This challenge gives you useful practise of going the other way; determining a differential equation that describes a given solution. This can be a little confusing at first, so take time to understand where things originate from.
+
+\subsection*{Challenge}
+Determine the 2nd-order linear differential equation which has the general solution
+\begin{equation}
+    y = C_1 e^{-2t} + C_2 t e^{-2t} + t^3 - 3t
+\end{equation}
+
+\subsection*{Solution}
+The solution is given on the next page. Please try to not look at the solution before completing the questions, since this will facilitate deep understanding and reproduce a real-life/exam environment.
+\newpage
+
+$y'' + 4y' + 4y = 4t^3 + 12 t^2 - 6t - 12$
