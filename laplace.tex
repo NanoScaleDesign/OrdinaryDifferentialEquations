@@ -48,9 +48,9 @@ To check your answer, substitute $s=1$ and $a=2$ into your final solution.
 determine $\lap{3a^2 e^{at} + a^3te^{at}}$
 
 \subsection*{Solution}
-To check your answer, substitute $s=1$ and $a=2$ into your final solution.
+2. To check your solution, substitute $s=3$ and $a=2$ into your final solution and you should obtain $20$.
 
--4
+
 
 
 
@@ -76,11 +76,11 @@ Given
 2. What is $f(t)$ in the equation $\lap{f(t)} = \frac{s-4}{(s-4)^2-100}$?
 
 \subsection*{Solution}
-To check your answer, substitute $s=2$ and $t=2$ as appropriate:
+To check your answer, substitute $s=2$ and $t=1/2$ as appropriate:
 
 1. $0.0417$
 
-2. $7.23 \times 10^{11}$
+2. $548$
 
 
 
@@ -109,9 +109,11 @@ as $t \rightarrow 0$.
 if we apply L'H\^opital's rule $n$ times with respect to $t$, what is the power of $t$ in the numerator? Note that $e^{st}$ is always constant, so by repeated differentiation we can apply L'H\^opital's rule even for $t^n$.
 
 \subsection*{Solution}
-1. \hash{ww}{76c8d4}
+1.\\
+\solint{w}{ac1052}
 
-2. \hash{xx}{1592d7}
+2.\\
+\solint{x}{e50eb7}
 
 
 
@@ -141,13 +143,17 @@ Considering $U_c$ as the unit step-function at $c$, calculate the following Lapl
 \subsection*{Solution}
 To check your answers, substitute $c=1$ and $s=2$ as appropriate.
 
-1. \hash{yy}{39574c}
+1.\\
+\soltwodp{y}{4f9ac8}
 
-2. 0.0677
+2.\\
+0.0677
 
-3. 0.0585
+3.\\
+0.0585
 
-4. $7.470 \times 10^{-4}$
+4.\\
+\num{7.470e-4}
 
 
 
@@ -170,35 +176,50 @@ Determine the function $f(t)$ by finding the inverse of the following Laplace tr
 
 1. $\displaystyle F(s)=\frac{1}{(s-1)^2}$
 
-2. $\displaystyle F(s)=\frac{1-s}{s^2}$
+2. $\displaystyle F(s)=\frac{1}{s^2} - \frac{1}{s}$
 
-3. $\displaystyle F(s)=\frac{2 e^{-2s}}{s^2-2s+2}$
+%3. $\displaystyle F(s)=\frac{1-s}{s^2}$
+
+3. $\displaystyle F(s)=\frac{5-5s}{s^2}$
 
 4. $\displaystyle F(s)=\frac{6}{(2+s)^4}$
 
-5. $\displaystyle F(s)=\frac{120+6s^3}{s^6}$
+%5. $\displaystyle F(s)=\frac{120+6s^3}{s^6}$
+
+5. $\displaystyle F(s)=\frac{2 e^{-2s}}{s^2-2s+2}$
 
 6. $\displaystyle F(s)=\frac{e^{12-3s}}{s-4}$
 
-
 \subsection*{Solution}
-To check your answers, substitute $t=2$ into your final answer. If there is a unit-step in your solution, precede your numerical answer with ``u(c)'' where ``c'' is the position of the unit step. So for example, an answer of $U_5 t^2$ would be entered as ``u(5.00)4.00'' (all numbers to two decimal places). An answer without a unit-step would just be entered to two decimal places (eg, ``4.00'' in the previous example).
+To check your answers, substitute $t=2$ into your final answer. If there is a unit-step in your solution, precede your numerical answer with ``u(c)'' where ``c'' is the position of the unit step. So for example, an answer of $U_5 t^2$ with a hash key of ``a'' would be entered as ``au(5.00)4.00'' (all numbers to two decimal places). An answer without a unit-step would just be entered to two decimal places (eg, ``a4.00'' in the previous example).
 
-1. Hash = 5cacdb\ldots
+1.\\
+\soltwodp{z}{de950a}
 
-2. Hash = 41cf26\ldots
+2.\\
+\soltwodp{a}{a1e88c}
 
-3. Hash = 45c11e\ldots
+%3.\\
+%\soltwodp{b}{1175d1}
 
-4. Hash = 9ffc7a\ldots
+3.\\
+\soltwodp{c}{ae77f2}
 
-5. Hash = 766fd0\ldots
+4.\\
+\soltwodp{c}{af01f2}
 
-6. Hash = e60079\ldots
+%5.\\
+%\soltwodp{d}{d79888}
+
+5.\\
+\soltwodp{b}{b27f51}
+
+6.\\
+\soltwodp{e}{cbc74a}
 
 
 
-
+\iffalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -224,13 +245,17 @@ Calculate the following Laplace transforms (treat $c$ as a positive constant):
 \subsection*{Solution}
 To check your solution, set $s=1$, $c=2$ and $t=1$ as appropriate to check your answers.
 
-1. \hash{zz}{ffef92}
+1.\\
+\soltwodp{z}{a78955}
 
-2. \hash{aaa}{826784}
+2.\\
+\soltwodp{a}{ea59ed}
 
-3. \hash{bbb}{f44448}
+3.\\
+\soltwodp{b}{48cb8f}
 
-4. \hash{ccc}{4ca484}
+4.\\
+\soltwodp{c}{c181ec}
 
 
 
@@ -241,22 +266,30 @@ To check your solution, set $s=1$, $c=2$ and $t=1$ as appropriate to check your 
 \section{The Dirac delta function and its inverse Laplace transform}
 
 \subsection*{Challenge}
-Calculate the following Laplace transform:
+1. Calculate the following Laplace transform:
 
 $\displaystyle \delta(t-2) Sin(2t)$
 
-Calculate the following inverse Laplace transforms:
+2. Calculate the following inverse Laplace transforms and state your answer in terms of the Dirac delta function:
 
-1. $\displaystyle e^{-2s} Sin(2)$
+I. $\displaystyle e^{-2s} Sin(2)$
 
-2. $\displaystyle e^{-2s} Sin(4)$
+II. $\displaystyle e^{-2s} Sin(4)$
 
 \subsection*{Solution}
-To check your answer, substitute $t=1$ into the final expression and evaluate the part inside and outside of the Dirac delta function separately. So for example, if your answer is $\delta(t-2) (t^2+1)$, the expression inside the delta-function is $t-2$ and will evaluate to $-1.00$ while the expression outside of the delta-function is $t^2+1$ and will evaluate to $2.00$.
+2. To check your answer, substitute $t=1$ into the final expression and evaluate the part inside and outside of the Dirac delta function separately. So for example, if your answer is $\delta(t-2) (t^2+1)$, the expression inside the delta-function is $t-2$ and will evaluate to $-1.00$ while the expression outside of the delta-function is $t^2+1$ and will evaluate to $2.00$.
 
-1. Inside delta function: \hash{ddd}{7cec9e}; Outside delta function: \hash{eee}{8147e6}
+I. Inside delta function:\\
+\soltwodp{d}{4881ba}
 
-2. Inside delta function: \hash{fff}{033c55}; Outside delta function: \hash{ggg}{b1643a}
+I. Outside delta function\\
+\soltwodp{e}{724c45}
+
+II. Inside delta function:\\
+\soltwodp{f}{75d06e}
+
+II. Outside delta function:\\
+\soltwodp{g}{fca71c}
 
 
 
@@ -368,3 +401,4 @@ for $y$, given initial conditions $y(0)=0$ and $y'(0)=0$.
 $y(6)=0.698$
 
 Note how we have a simple oscillation after $t=5$, and nothing before it.
+\fi
