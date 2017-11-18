@@ -11,8 +11,7 @@ The Laplace Transform is a powerful technique that has many uses beyond solving 
 \subsection*{Challenge}
 1. Calculate $\lap{1}$
 
-2. Calculate $\lap{at}$\\
-(You may wish to come back to this question after reviewing L'H\^opital's rule in challenge \ref{sec:lopital} or alternatively the relation of derivatives in challenge \ref{sec:3rdderiv}.) % NT: Fix the order
+(2. \emph{Moved to challenge \ref{sec:3rdderiv}})
 
 3. Calculate $\lap{Cos(at)}$
 
@@ -20,8 +19,6 @@ The Laplace Transform is a powerful technique that has many uses beyond solving 
 To check your answer, substitute $s=1$ and $a=2$ into your final solution.
 
 1. 1
-
-2. 2
 
 3. $\frac{1}{5}$
 
@@ -31,7 +28,7 @@ To check your answer, substitute $s=1$ and $a=2$ into your final solution.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Laplace transform of a 3rd derivative}
+\section{Laplace transform and derivatives}
 \label{sec:3rdderiv}
 
 \subsection*{Resources}
@@ -49,8 +46,19 @@ To check your answer, substitute $s=1$ and $a=2$ into your final solution.
 \end{equation}
 determine $\lap{3a^2 e^{at} + a^3te^{at}}$
 
+3. Calculate $\lap{at}$\\
+Notes:
+\begin{itemize}
+    \item \emph{L'H\^opital's rule cannot be applied to this question - if you don't understand why, please ask your partner or the teacher in class.}
+    \item \emph{You may be able to solve this considering the rate of increase of $e^t$ vs the rate of increase of $t$ as $t$ approaches $\infty$, however there is another way using the relation of derivatives of the Laplace transform, and I would encorage you to understand how to solve it this way.}
+\end{itemize}
+
 \subsection*{Solution}
-2. To check your solution, substitute $s=3$ and $a=2$ into your final solution and you should obtain $20$.
+2.\\
+If you substitute $s=3$ and $a=2$ into your final solution you should obtain $20$.
+
+3.\\
+If you substitute $s=1$ and $a=2$ into your final solution you should obtain $2$.
 
 
 
@@ -87,36 +95,37 @@ To check your answer, substitute $s=2$ and $t=1/2$ as appropriate:
 
 
 
+\stepcounter{section}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
+%\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{L'H\^opital's rule}
-\label{sec:lopital}
-
-\subsection*{Resources}
-\begin{itemize}
-    \item Wikipedia: \url{https://en.wikipedia.org/wiki/L\%27H\%C3\%B4pital\%27s_rule}
-\end{itemize}
-
-\subsection*{Challenge}
-1. Use L'H\^opital's rule to determine the limit of
-\begin{equation}
-    t e^{-st}
-\end{equation}
-as $t \rightarrow 0$.
-
-2. Considering the case of
-\begin{equation}
-    \frac{t^n}{e^{st}}
-\end{equation}
-if we apply L'H\^opital's rule $n$ times with respect to $t$, what is the power of $t$ in the numerator? Note that $e^{st}$ is always constant, so by repeated differentiation we can apply L'H\^opital's rule even for $t^n$.
-
-\subsection*{Solution}
-1.\\
-\solint{w}{ac1052}
-
-2.\\
-\solint{x}{e50eb7}
+%\section{L'H\^opital's rule}
+%\label{sec:lopital}
+%
+%\subsection*{Resources}
+%\begin{itemize}
+    %\item Wikipedia: \url{https://en.wikipedia.org/wiki/L\%27H\%C3\%B4pital\%27s_rule}
+%\end{itemize}
+%
+%\subsection*{Challenge}
+%1. Use L'H\^opital's rule to determine the limit of
+%\begin{equation}
+    %t e^{-st}
+%\end{equation}
+%as $t \rightarrow 0$.
+%
+%2. Considering the case of
+%\begin{equation}
+    %\frac{t^n}{e^{st}}
+%\end{equation}
+%if we apply L'H\^opital's rule $n$ times with respect to $t$, what is the power of $t$ in the numerator? Note that $e^{st}$ is always constant, so by repeated differentiation we can apply L'H\^opital's rule even for $t^n$.
+%
+%\subsection*{Solution}
+%1.\\
+%\solint{w}{ac1052}
+%
+%2.\\
+%\solint{x}{e50eb7}
 
 
 
