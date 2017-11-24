@@ -3,6 +3,7 @@
 \subsection*{Resources}
 \begin{itemize}
     \item Videos: The \textbf{four} Khan-academy videos starting at \url{https://www.khanacademy.org/math/differential-equations/laplace-transform/laplace-transform-tutorial/v/laplace-transform-1} % 8m+7:30+10+9 = 35:30
+    \item Text (student suggestion, Thai language): \url{http://facstaff.swu.ac.th/surachap/documents/mathematic_i_chapter_3.pdf}
 \end{itemize}
 
 \subsection*{Comment}
@@ -183,6 +184,8 @@ To check your answers, substitute $c=1$ and $s=2$ as appropriate.
 \subsection*{Comment}
 Being able to reversing the Laplace transform is a crucial skill required for applying it to solving ODE's. It can be a little confusing at first however, so I recommend to take your time to understand the essential steps involved thoroughly, as this will then give you greater confidence when you come to apply this to solving ODE's. To this end, the video listed in the resource is a fantastic introduction to this.
 
+Also, it can be helpful to remember that if you're shifting the transform, perform the transform and \emph{then} apply the shift.
+
 \subsection*{Challenge}
 Determine the function $f(t)$ by finding the inverse of the following Laplace transforms:
 
@@ -231,7 +234,6 @@ To check your answers, substitute $t=2$ into your final answer. If there is a un
 
 
 
-\iffalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -250,7 +252,7 @@ Calculate the following Laplace transforms (treat $c$ as a positive constant):
 
 2. $\displaystyle \lap{\delta(t-c)}$
 
-3. $\displaystyle \lap{\delta(t-2) Cos(4 t)}$
+3. $\displaystyle \lap{\delta(t-2) \cos(4 t)}$
 
 4. $\displaystyle \lap{\delta(t) (t^2+10)}$
 
@@ -260,11 +262,9 @@ To check your solution, set $s=1$, $c=2$ and $t=1$ as appropriate to check your 
 1.\\
 \soltwodp{z}{a78955}
 
-2.\\
-\soltwodp{a}{ea59ed}
+2. $0.135$
 
-3.\\
-\soltwodp{b}{48cb8f}
+3. $-0.020$
 
 4.\\
 \soltwodp{c}{c181ec}
@@ -280,13 +280,13 @@ To check your solution, set $s=1$, $c=2$ and $t=1$ as appropriate to check your 
 \subsection*{Challenge}
 1. Calculate the following Laplace transform:
 
-$\displaystyle \delta(t-2) Sin(2t)$
+$\displaystyle \delta(t-2) \sin(2t)$
 
-2. Calculate the following inverse Laplace transforms and state your answer in terms of the Dirac delta function:
+2. Calculate the following inverse Laplace transforms assuming they contain a Dirac delta function:
 
-I. $\displaystyle e^{-2s} Sin(2)$
+I. $\displaystyle e^{-2s} \sin(2)$
 
-II. $\displaystyle e^{-2s} Sin(4)$
+II. $\displaystyle e^{-2s} \sin(4)$
 
 \subsection*{Solution}
 2. To check your answer, substitute $t=1$ into the final expression and evaluate the part inside and outside of the Dirac delta function separately. So for example, if your answer is $\delta(t-2) (t^2+1)$, the expression inside the delta-function is $t-2$ and will evaluate to $-1.00$ while the expression outside of the delta-function is $t^2+1$ and will evaluate to $2.00$.
@@ -320,18 +320,21 @@ II. Outside delta function:\\
 Here you finally get the opportunity to practise solving ODE's using the powerful method of Laplace transformations. Please takes notes from all four videos listed in the resources section; they provide very useful examples of how to use this method, including related algebraic techniques that are commonly required to solve such challenges.
 
 \subsection*{Challenge}
-The spring equation you encountered in challenge \ref{sec:hooke} introduced you to the concept of oscillation of a mass on a spring. There, the equation to determine the displacement of the spring $y$ from its equilibrium position was $y''+y=0$, which yields a solution $y=C_1 Cos(t) + C_2 Sin(t)$. This is free oscillation without external damping or driving, and it will oscillate according to the cosine and sine sum for all time ($t$). It is also possible to add a forcing term to the equation by making it non-homogeneous, such as in the form
+The spring equation you encountered in challenge \ref{sec:hooke} introduced you to the concept of oscillation of a mass on a spring. There, the equation to determine the displacement of the spring $y$ from its equilibrium position was $y''+y=0$, which yields a solution $y=C_1 \cos(t) + C_2 \sin(t)$. This is free oscillation without external damping or driving, and it will oscillate according to the cosine and sine sum for all time ($t$). It is also possible to add a forcing term to the equation by making it non-homogeneous, such as in the form
 
 \begin{equation}
-    y'' + 4y = 2 Cos(3t)
+    y'' + 4y = 2 \cos(3t)
 \end{equation}
 
 Here the forcing varies with time $t$ in the form of a cosine wave.
 
 Use the Laplace transform method to solve the ODE in the above equation given a starting displacement of zero and an initial velocity of zero. You may use the table of Laplace transforms in the resources to help you.
 
+A graph of the resulting oscillation is shown here:\\
+\includegraphics[width=10cm]{cosforcing.png}
+
 \subsection*{Solution}
-Substitute $t=1$ to check your final solution: $y(t=1)=0.2295$.
+Your final expression should satisfy $y(t=1)=0.2295$.
 
 
 
@@ -342,7 +345,7 @@ Substitute $t=1$ to check your final solution: $y(t=1)=0.2295$.
 \section{An exponential function}
 
 \subsection*{Challenge}
-Solve
+1. Solve
 
 \begin{equation}
     y''+5y'+4y=100e^{-2t}
@@ -353,8 +356,16 @@ for $y$, given initial conditions $y(0)=-1$ and $y'(0)=0$. Since the algebra get
     \frac{-s^2-7s+90}{(s+1)(s+2)(s+4)} = \frac{32}{s+1} - \frac{50}{s+2} + \frac{17}{s+4}
 \end{equation}
 
+2. The homogeneous solution to this equation is
+\begin{equation}
+    y(t)= \frac{1}{3} \left( e^{-4t} - 4 e^{-t} \right)
+\end{equation}
+Show how the two graphs of the homogeneous and non-homogenous solutions differ, and explain how the forcing leads to the different shape observed.
+
 \subsection*{Solution}
-Substitute $t=1$ to check your final solution: $y(1)=5.32$.
+1. Your final expression should satisfy $y(1)=5.32$.
+
+2. Please compare your answer with your partner in class or discuss with the teacher.
 
 
 
@@ -365,11 +376,15 @@ Substitute $t=1$ to check your final solution: $y(1)=5.32$.
 \section{A unit step}
 
 \subsection*{Comment}
-In past challenges we studied the Laplace transform for $U_c f(t-c)$. So if $f(t)=t$ we must evaluate for $f(t-c)=t-c$. In the challenge here, we effectively have $f(t)=1$ and since ``1'' doesn't depend on $t$, $t-c$ doesn't do anything to the ``function''.
+There are two things to watch out for in this challenge:
+\begin{itemize}
+    \item We have defined the Laplace transform for a step function in the sense of $U_c f(t-c)$. So if $f(t)=t$ we must evaluate for $f(t-c)=t-c$. If the function does not contain $t$ then we simply do not need to subtract $c$.
+    \item The ``$t-c$'' is essentially substituted in place of any $t$ in the equation. So ``$at$'' will become $a(t-c)$ and not $at - c$.
+\end{itemize}
 
 This challenge is interesting because unlike previous challenges, it is the first challenge where we really have no other option but to use the Laplace transform method, and so you can appreciate its power. In this challenge, we have a 2nd-order homogeneous equation (unforced oscillation) until $t=5$ when we apply a constant force. You will find your answer leads to a constant oscillation. But how can it lead to a constant oscillation if we are constantly applying a force? Shouldn't the oscillation slowly increase in magnitude due to the energy that is being added to the system from the constant force being applied? The answer is of course no: we take just as much energy out of the system when the velocity is in the opposite direction to the force as we add to the system when the velocity is in the same direction as the applied force.
 
-One important point to note is that the inverse Laplace transform of $e^{-cs} s/(s^2+a^2)$ is $\lap{U_c Cos(a[t-c])}$ (not $\lap{U_c Cos([at-c])}$).
+\includegraphics[width=8cm]{stepforcing.png}
 
 \subsection*{Challenge}
 Solve
@@ -381,8 +396,7 @@ Solve
 for $y$, given initial conditions $y(0)=0$ and $y'(0)=0$. 
 
 \subsection*{Solution}
-
-$y(t=6)=0.42$
+Your final expression should satisfy $y(t=6)=0.42$.
 
 Note that for $t<5$, the solution is zero. This is because there was no initial velocity and no initial acceleration, so there was no motion until a forcing was applied in terms of a constant force of ``1'' from $t=5$. If either of these had been non-zero, we would have had a non-zero value for $t<5$!
 
@@ -390,7 +404,7 @@ Optionally, you can try setting the initial conditions to non-zero values to see
 
 
 
-
+\iffalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -408,9 +422,10 @@ Solve
 
 for $y$, given initial conditions $y(0)=0$ and $y'(0)=0$. 
 
+\includegraphics[width=8cm]{deltaforcing.png}
+
 \subsection*{Solution}
+Your answer should satisfy $y(6)=0.698$.
 
-$y(6)=0.698$
-
-Note how we have a simple oscillation after $t=5$, and nothing before it.
+Note how this gives rise to a simple oscillation after $t=5$, and nothing before it.
 \fi
