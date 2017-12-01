@@ -1,10 +1,10 @@
 % NT: Ask to draw some examples
 \section{Homogeneous vs non-homogeneous}
 
-\subsection*{Resources}
-\begin{itemize}
-    \item Page 1 of the PDF \url{http://www.math.psu.edu/tseng/class/Math251/Notes-LinearSystems.pdf}
-\end{itemize}
+\subsection*{Comment}
+\emph{The following notes were developed by Zachary S. Tseng at Pennsylvania State University, USA (\url{http://www.math.psu.edu/tseng/}). Included here with kind permission.}
+
+\includepdf[pages=-,pagecommand={},width=\textwidth,nup=1x1,frame=true]{External/systems_homo.pdf}
 
 \subsection*{Challenge}
 Separately add the points of the following \emph{homogeneous} and \emph{non-homogeneous} ODE systems:
@@ -70,7 +70,7 @@ $\displaystyle
 +
 \left(
     \begin{array}{c}
-        Cos(t) \\
+        1 \\
         0 \\
         0
     \end{array}
@@ -103,8 +103,8 @@ $\displaystyle
 +
 \left(
     \begin{array}{c}
-        Cos(t) \\
-        Sin(t) \\
+        1 \\
+        \sin(t) \\
         0
     \end{array}
 \right)$
@@ -136,15 +136,18 @@ $\displaystyle
 +
 \left(
     \begin{array}{c}
-        Cos(t) \\
-        Sin(t) \\
-        Tan(t)
+        1 \\
+        \sin(t) \\
+        \tan(t)
     \end{array}
 \right)$
 
 \subsection*{Solution}
-Homogeneous: \hash{hhh}{106c67} \\
-Non-homogeneous: \hash{iii}{d51f57}
+\textbf{Homogeneous}\\
+\solint{h}{346b81}
+
+\textbf{Non-homogeneous}\\
+\solint{i}{773ffc}
 
 
 
@@ -152,7 +155,7 @@ Non-homogeneous: \hash{iii}{d51f57}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Basis for creating a system of equations from a single ODE}
+\section{Basis for creating a system of equations from a single homogeneous ODE}
 \label{sec:systembasis}
 
 \subsection*{Resources}
@@ -169,25 +172,23 @@ Considering the general form of an nth-order linear equation,
 \end{equation}
 we substitute $x_1=y$, $x_2=y'$, \ldots, $x_n=y^{(n-1)}$ and $x_n'=y^{(n)}$.
 
-When replacing a $y$-term by an $x$ term, the $n$ in $x_n$ corresponds to one more than the number of times $y$ is differentiated. So $x_{n+1}$ corresponds to $y$ being differentiated $n$ times and $x_n$ corresponds to $y$ being differentiated $n-1$ times. So $x_2$ corresponds to $y^{(1)}$ (differentiated 1 time) and $x_1$ corresponds to $y$ (differentiated 0 times).
+When replacing a $y$-term by an $x$ term, the $n$ in $x_n$ corresponds to one more than the number of times $y$ is differentiated. So $x_{n+1}$ corresponds to $y$ being differentiated $n$ times and similarly $x_n$ corresponds to $y$ being differentiated $n-1$ times.
 
 Note that $x_n'$ is one more differential than $x_n$, so $x_n'$ corresponds to $(y^{(n-1)})' = y^{(n)}$.
 So the $n$ in $x_n'$ corresponds to the number of times $y$ is differentiated (ie, $y^{(n)}$).
 
-The examples on page 3 are clearer after reading page 4, so I encourage you to read page 4 before considering the examples.
-
-Considering example (II) on page 3, you are given the equation
+To understand how this helps us write high-order ODE's as a system of equations, consider the equation
 \begin{equation}
     y''' - 2y'' + 3y' - 4y = 0
 \end{equation}
 
-To add a more detailed explanation to that found in the PDF: First re-write the ODE in terms of $x$ and $x'$. Note that there is no ``$x_0'$'' so we just write it as $x_1$ in both equations.
+First re-write the ODE in terms of $x$ and $x'$. Note that there is no ``$x_0'$'' so we just write it as $x_1$ in both equations.
 \begin{align}
     x_4 - 2 x_3 + 3 x_2 - 4 x_1 &= 0 \label{eq:xs} \\
     x_3' - 2 x_2' + 3 x_1' - 4 x_1 &= 0 \label{eq:xprimes}
 \end{align}
 
-Our aim is to write the system of equations in the form $\bm{x'} = \bm{A}\bm{x}$. Note that there is no ``$x_4'$'' in our equations, so the largest value of $n$ in $x_n'$ will be 3 (ie, $x_3'$).
+Our aim is to write the system of equations in the form $\bm{x'} = \bm{A}\bm{x}$. Note that there is no ``$x_4'$'' in our equations, so the largest value of $n$ in $x_n'$ will be 3 (ie, $x_3'$). So we can write
 \begin{equation}
     \left(
         \begin{array}{c}
@@ -305,20 +306,16 @@ Similarly, if you are given a system of 2 1st-order ODE's, you can know that it 
 \subsection*{Challenge}
 Write the following ODE's in matrix form:
 
-1) $2 y'' + 4 y' - 6 y = 0$
+1) $2y'' + 4y' - 6y = 0$
 
-2) $y'' + y = Cos(t)$
-
-Complete exercises 1 and 2 on page 5 of the PDF.
+2) $y'' - 4y' + 5y = 0$
 
 \subsection*{Solutions}
 To check your answers, sum the values of all the terms in your matrix $\bm{A}$.
 
 1) 2
 
-2) 0 (remember there is also a $+\bm{g}$ column-vector added to $\bm{A}\bm{x}$ too)
-
-The answers to the PDF exercises are shown on page 5 of the PDF. Perhaps obviously, since you will not have the answers in a real-life/exam environment, please don't review each answer until completion. If you get stuck, be sure to review your notes (especially the worked-examples in the PDF) rather than the answers, to facilitate deep learning. 
+2) 0
 
 
 
@@ -326,8 +323,80 @@ The answers to the PDF exercises are shown on page 5 of the PDF. Perhaps obvious
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\input{matricies}
-\section{Matricies}
+\section{Systems of equations from a non-homogeneous ODE}
+
+\section*{Comment}
+The approach is very similar when you have a non-homogeneous ODE, but you just have to remember to add the forcing term at the end. For example, considering an equation similar to before, but this time with a cosine forcing term:
+
+\begin{equation}
+    y''' - 2y'' + 3y' - 4y = \cos t
+\end{equation}
+
+We have
+
+\begin{align}
+    x_4 - 2 x_3 + 3 x_2 - 4 x_1 &= \cos t \\
+    x_3' - 2 x_2' + 3 x_1' - 4 x_1 &= \cos t
+\end{align}
+
+By comparison we still have $x'_1 = x_2$ and $x'_2 = x_3$ but now when we replace $x_4$ with $x'_3$ and re-arrange we have
+\begin{equation}
+   x_3' = \cos t + 4 x_1 - 3 x_2 + 2 x_3
+\end{equation}
+
+leading to a final system of equations of the form
+
+\begin{equation}
+    \left(
+        \begin{array}{c}
+            x_1' \\
+            x_2' \\
+            x_3'
+        \end{array}
+    \right)
+    =
+    \left(
+        \begin{array}{ccc}
+            0 & 1 & 0 \\
+            0 & 0 & 1 \\
+            4 & -3 & 2
+        \end{array}
+    \right)
+    \left(
+        \begin{array}{c}
+            x_1 \\
+            x_2 \\
+            x_3
+        \end{array}
+    \right)
+    +
+    \left(
+        \begin{array}{c}
+            0 \\
+            0 \\
+            \cos t
+        \end{array}
+    \right)
+\end{equation}
+
+\subsection*{Challenge}
+Re-write the following differential equations as a system of first-order differential equations:
+
+1) $y'' + y' + y = \cos t$
+
+2) $y'' - 5 y' + 9 y = t \cos 2t$
+
+\subsection*{Solutions}
+Please compare your solution with that of your partner or ask the teacher.
+
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\input{matrices}
+\section{Matrices}
 
 \subsection*{Resources}
 \begin{itemize}
@@ -335,9 +404,9 @@ The answers to the PDF exercises are shown on page 5 of the PDF. Perhaps obvious
 \end{itemize}
 
 \subsection*{Comment}
-It is worth spending some time getting comfortable with manipulating matricies, since this is an indispensible basis for the work that is about to follow. The PDF gives a quick introduction to matricies. For a more thorough introduction, the Khan Academy playlist on linear algebra [1] is excellent, although beyond the scope of this course.
+It is worth spending some time getting comfortable with manipulating matrices, since this is an indispensable basis for the work that is about to follow. The PDF gives a quick introduction to matrices. For a more thorough introduction, the Khan Academy playlist on linear algebra [1] is excellent, although beyond the scope of this course.
 
-One note to deal with any confusion arising with regard to eigenvectors with matricies with zeros. For $(A-rI)$ equal to something like
+One note to deal with any confusion arising with regard to eigenvectors with matrices with zeros. For $(A-rI)$ equal to something like
 \begin{equation}
 \left(
     \begin{array}{cc}
@@ -379,15 +448,61 @@ Finally, note that $(A-rI) = ((a, b), (c, d))$ will give you two equivalent form
 \vspace{0.2cm}
 \noindent [1] \url{https://www.khanacademy.org/math/linear-algebra/alternate-bases}
 
+\emph{The following notes were developed by Zachary S. Tseng at Pennsylvania State University, USA (\url{http://www.math.psu.edu/tseng/}). Included here with kind permission.}
+
+\includepdf[pages=-,pagecommand={},width=\textwidth,nup=1x1,frame=true]{External/matrices.pdf}
+
 \subsection*{Challenges}
-Complete exersizes 1, 2, 3, 4 (I and II only) and 5 on page 18 of the PDF.
+Considering the matrices
+$\displaystyle
+    \mathbf{C} =
+\left(
+    \begin{array}{cc}
+        -5 & -1 \\
+        7 & 3
+    \end{array}
+\right)
+$
+and
+$\displaystyle
+    \mathbf{D} =
+\left(
+    \begin{array}{cc}
+        2 & 0 \\
+        -2 & -1
+    \end{array}
+\right)
+$
+calculate:
+
+1. $\mathbf{C} + 2 \mathbf{D}$
+
+2. $\mathbf{C} \mathbf{D}$
+
+3. $\mathbf{D} \mathbf{C}$
+
+4. $\det(\mathbf{CD})$
+
+5. $\mathbf{(CD)}^{-1}$
+
+6. Find the eigenvectors and eigenvalues of $\mathbf{C}$
+
+7. Find the eigenvectors and eigenvalues of $\mathbf{D}$
 
 \subsection*{Solutions}
-The answers to the PDF exercises are shown on page 18 of the PDF. Perhaps obviously, since you will not have the answers in a real-life/exam environment, please don't review each answer until completion. If you get stuck, be sure to review your notes (especially the worked-examples in the PDF) rather than the answers, to facilitate deep learning. 
+1. The sum of the terms in the matrix should be $2$.
 
-The solution to question 1 above can be found on the next page.
+2. The sum of the terms in the matrix should be $-27$.
 
+3. The sum of the terms in the matrix should be $-27$.
 
+4. $30$
+
+5. $0.033$
+
+6. Eigenvalues 2 and -4 will have eigenvectors $(s,-7s)$ and $(s,-s)$ respectively where $s$ is any non-zero number.
+
+7. Eigenvalues 2 and -1 will have eigenvectors $(s,-2s/3)$ and $(0,s)$ respectively where $s$ is any non-zero number.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -405,7 +520,7 @@ Considering the matrix
         \end{array}
     \right)
 \end{equation}
-The eigvenvalues are -2 and -1. Considering the eigenvalue -2, 
+The eigenvalues are -2 and -1. Considering the eigenvalue -2, 
 \begin{equation}
     A - Ir = \left(
         \begin{array}{cc}
@@ -432,7 +547,7 @@ Show that the equation $(A - Ir)\bm{x} = {0}$, where
 yields the same eigenvector, irrespective of whether you calculate the eigenvector using the top or bottom row of $(A-Ir)$. You may find that one of the representations of the eigenvectors looks like $(i-1,1)$.
 
 \subsection*{Solutions}
-You should be able to generate two eigenvectors by using the top and bottom rows of the $A-Ir$ matrix, and show that they are infact the same eigenvector by multiplying by an equivalent (imaginary) number. Please discuss with your partner or the teacher in class if you have trouble.
+You should be able to generate two eigenvectors by using the top and bottom rows of the $A-Ir$ matrix, and show that they are in fact the same eigenvector by multiplying by an equivalent (imaginary) number. Please discuss with your partner or the teacher in class if you have trouble.
 
 
 
@@ -442,21 +557,83 @@ You should be able to generate two eigenvectors by using the top and bottom rows
 \section{Solving systems of ODE's}
 \label{sec:systemsolving}
 
-\subsection*{Resources}
-\begin{itemize}
-    \item Pages 6-31 of the PDF \url{http://www.math.psu.edu/tseng/class/Math251/Notes-LinearSystems.pdf} 
-\end{itemize}
+\subsection*{Comment}
+When decomposing a higher-order ODE into a system of 1st-order ODE's, we are actually dealing with a special form of 1st-order ODE system that looks like
+
+\begin{equation}
+     \left(
+        \begin{array}{c}
+            x_1' \\ x_2' \\ x_3' \\ x_4'
+        \end{array}
+    \right)
+    =
+     \left(
+        \begin{array}{cccc}
+            0 & 1 & 0 & 0 \\
+            0 & 0 & 1 & 0 \\
+            0 & 0 & 0 & 1 \\
+            -a_5/a_1 & -a_4/a_1 & -a_3/a_1 & -a_2/a_1
+        \end{array}
+    \right)
+     \left(
+        \begin{array}{c}
+            x_1 \\ x_2 \\ x_3 \\ x_4
+        \end{array}
+    \right)
+    +
+     \left(
+        \begin{array}{c}
+            0 \\ 0 \\ 0 \\ f(y)
+        \end{array}
+    \right)
+\end{equation}
+
+which naturally arise from a higher-order ODE like
+\begin{equation}
+    a_1 y'''' + a_2 y''' + a_3 y'' + a_4 y' + a_5 y = f(y)
+\end{equation}
+
+This can be considered in terms of other phenomena however whereby the system of ODE's cannot be expressed as simply a higher-order ODE. In this challenge you can learn about such systems.
+
+\emph{The following notes were developed by Zachary S. Tseng at Pennsylvania State University, USA (\url{http://www.math.psu.edu/tseng/}). Included here with kind permission.}
+
+\includepdf[pages=-,pagecommand={},width=\textwidth,nup=1x1,frame=true]{External/linear_systems.pdf}
 
 \subsection*{Challenge}
-Complete at least exercises 1-10 on page 32-33 of the PDF.
+\label{sec:systemsolvingchallenges}
+Answer questions 2, 3 and 4 in the last page in the notes above.
 
 \subsection*{Solutions}
 It might not be clear to you why solutions involve vectors and what this means physically, but for now, please just get used to solving equations in this fashion.
 
-The answers are shown on page 33-34 of the PDF. Perhaps obviously, since you will not have the answers in a real-life/exam environment, please don't review each answer until completion. If you get stuck, be sure to review your notes (especially the worked-examples in the PDF) rather than the answers, to facilitate deep learning. 
+Solutions can be found in the Appendix \ref{sec:systemsolvingsols}
+
 
 %NT: Add something about intersection of graphs? https://en.wikipedia.org/wiki/System_of_linear_equations
 % Good resources: http://www.math.psu.edu/tseng/class/Math251/
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Solving systems of ODE's with initial conditions}
+\label{sec:systemsolvinginit}
+
+\subsection*{Challenge}
+\label{sec:systemsolvinginitchallenges}
+Continuing from the previous challenge, solve the problems 8, 9 and 10 in the PDF resource above, using initial conditions as given.
+
+\subsection*{Solutions}
+You should find that you solution is consistent with
+
+8. $\displaystyle \bm{x}(0.8) = \matrixcrr{-1.90}{-0.66}$
+
+9. $\displaystyle \bm{x}(0.8) = \matrixcrr{33100}{-13300}$
+
+10. $\displaystyle \bm{x}(0.8) = \matrixcrr{-1.71}{1.96}$
+
 
 
 
@@ -567,3 +744,4 @@ Place the graphs below in the same order as exercises 1-5. Note that in order to
 
 % NT: bifurcation? https://en.wikipedia.org/wiki/Hopf_bifurcation
 % Other Pendulum resources of interest: http://math.stackexchange.com/questions/666806/nonlinear-pendulum and https://www.youtube.com/watch?v=6KSXLGHsrrs
+\fi
