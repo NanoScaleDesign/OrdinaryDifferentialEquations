@@ -1,0 +1,122 @@
+\section{System set-up}
+
+\subsection*{Comment}
+Numerical methods of solving ODE's are common. Here we will consider Euler and Runge-Kutta approaches.
+
+\subsection*{Challenge}
+
+Considering the following ODE:
+
+\begin{equation}
+    \dot{v} = g - v^2
+\end{equation}
+
+1. Sketch a direction field to show the behaviour of solutions to this ODE. In particular, what values of $v$ will lead to stable solutions?
+
+2. What type of ODE is this?
+
+\subsection*{Solutions}
+1. (Stable)\\
+\soltwodp{a}{4ac0c3}
+
+1. (Unstable)\\
+\soltwodp{b}{9ed192}
+
+2. Please compare your solution with your partner or ask the teacher.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Tangent lines}
+
+\subsection*{Resource}
+\begin{itemize}
+    \item Chapter 3: \url{https://raw.githubusercontent.com/kriskissel/ConceptsODE/master/main.pdf}
+\end{itemize}
+
+\subsection*{Challenge}
+1. Given that $y(t)$ satisfies the equation $y' = y^3 + 3t$ subject to $y(1) = 2$, find $y'(1)$ without solving the differential equation and obtain the equation of the tangent to the curve $y(t)$ at the point (1,2).
+
+2. Use the tangent line to estimte the value at $t = 1.5$.
+
+\subsection*{Solution}
+2. $7.5$
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Euler's method}
+\label{sec:euler}
+
+\subsection*{Resource}
+\begin{itemize}
+    \item Chapter 3: \url{https://raw.githubusercontent.com/kriskissel/ConceptsODE/master/main.pdf}
+\end{itemize}
+
+\subsection*{Challenge}
+Given that $v(t)$ satisfies the relation $v' = g - v^2$, assuming an initial value of $v(0)=0$, using Euler's method estimate $v(1)$ using step sizes of
+
+1. $\Delta t = 1/2$\\
+2. $\Delta t = 1/4$
+
+Explain the difference in the behaviour with the different step sizes. It may be helpful to draw a graph.
+
+\subsection*{Solution}
+1. $v(1) = -2.22$\\
+2. $v(1) = 3.22$
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{4th-order Runge-Kutta}
+
+\subsection*{Resource}
+\begin{itemize}
+    \item Chapter 3: \url{https://raw.githubusercontent.com/kriskissel/ConceptsODE/master/main.pdf}
+\end{itemize}
+
+\subsection*{Comment}
+Derivation of the Runge-Kutta method is beyond this course, however there are many resources online going into more detail. This video-series is nice:
+\begin{enumerate}
+    \item \url{https://www.youtube.com/watch?v=b-OSyxOpxKc}
+    \item \url{https://www.youtube.com/watch?v=JySrVHRmqfU}
+    \item \url{https://www.youtube.com/watch?v=iS3hsHGY1Ok}
+    \item \url{https://www.youtube.com/watch?v=wr3-dWoxiY4}
+\end{enumerate}
+
+\subsection*{Challenge}
+1. Using the same function as challenge \ref{sec:euler}, estimate $v(1/2)$ using the Runge-Kutta method and a step-size of $\Delta t = \frac{1}{4}$.
+
+2. Compare your answer to $v(1/2)$ obtained using the Euler method with the same step-size. How does the behaviour differ?
+
+\subsection*{Solution}
+1. $v(1/2) = 2.99$
+
+2. Please compare your answer with your partner or check with the teacher.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Runge-Kutta vs Euler method}
+
+\subsection*{Resource}
+\begin{itemize}
+    \item Chapter 3: \url{https://raw.githubusercontent.com/kriskissel/ConceptsODE/master/main.pdf}
+\end{itemize}
+
+\subsection*{Challenge}
+Briefly explain the advantages that the Runge-Kutta method has over the Euler method.
+
+\subsection*{Solution}
+Please compare your answer with your partner or check with the teacher.
