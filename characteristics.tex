@@ -1,0 +1,119 @@
+\section{Free vibration of a spring (review)}
+
+\subsection*{Challenge}
+Consider a mass on a spring undergoing vibration with no damping or external forcing, just as you considered in challenge \ref{sec:hooke}.
+
+Show that the position of the mass as a function of time can be given by
+\begin{equation}
+    \label{eq:freevib}
+    x(t) = C_1 \sin \omega_0 t + C_2 \cos \omega_0 t
+\end{equation}
+where $C_1$ and $C_2$ are constants. 
+
+\subsection*{Solution}
+Please discuss with the teacher or your peers if you have any difficulty.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Phase-shift}
+
+\subsection*{Comment}
+Using the trigonometric identity
+\begin{equation}
+    \cos(\alpha \pm \beta) = \cos \alpha \cos \beta \mp \sin \alpha \sin \beta
+\end{equation}
+it is possible to write equation \ref{eq:freevib} as
+\begin{equation}
+    x(t) = C_3 \cos(\omega_0 t - \phi)
+\end{equation}
+where $C_1 = C_3 \cos \phi$ and $C_2 = C_3 \sin \phi$, while the magnitude of $C_3$ can be found using $C_3^2 = C_1^2 + C_2^2$.
+
+\subsection*{Challenge}
+Re-writing sine as a phase-shifted cosine; ie, $\sin \omega_0 t$ becoming $\cos (\omega_0 t - \phi)$; if $\omega_0 = 1$, what is $\phi$ (use the lowest-possible positive solution)?
+
+\subsection*{Solution}
+\soltwodp{f}{f97726}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Derivation of a periodically-forced system}
+
+\subsection*{Challenge}
+Now consider that there is some external forcing of the form $F \cos \omega t$ where $F$ is some constant.
+Note that $\omega$ is the frequency at which the forcing varies, and $\omega_0^2 = k/m$ is the ``natural frequency'' of the unforced system.
+
+Assuming $\omega \ne \omega_0$, show that the position of the forced system as a function of time can be given by
+\begin{equation}
+    \label{eq:forcedpostime}
+    x(t) = C_3 \cos(\omega_0 t - \phi) + \frac{F}{m(\omega_0^2 - \omega^2)} \cos \omega t
+\end{equation}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Beating equation}
+
+\subsection*{Challenge}
+\emph{Assuming that the mass on the spring starts at rest at position ``0''}, solve for the constant $C_3$ and the phase-shift $\phi$, then use trigonometric identity
+\begin{equation}
+    \cos \alpha - \cos \beta = 2 \sin \left( \frac{\alpha - \beta}{2} t \right) \sin \left( \frac{\alpha + \beta}{2} t \right)
+\end{equation}
+to show that the position of the mass as described in equation \ref{eq:forcedpostime} can be given by
+\begin{equation}
+    x(t) = \frac{2 F}{m(\omega_0^2 - \omega^2)} \sin \left( \frac{\omega - \omega_0}{2} t \right) \sin \left( \frac{\omega + \omega_0}{2} t \right)
+\end{equation}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Beating explanation}
+
+\section*{Resources}
+\begin{itemize}
+    \item \url{https://www.johndcook.com/blog/2013/02/22/undamped-forced-vibrations/}
+    \item Video: \url{https://www.youtube.com/watch?v=v3ImPthjI3o}
+\end{itemize}
+
+\subsection*{Comment}
+The equation that you obtained in the previous challenge demonstrates nicely the phenomenon of beating. You have a high-frequency wave multiplied by a low frequency wave. The image in the above resource depicts this visually very nicely and you can also hear a representation of this in sound with the video resource above.
+
+\subsection*{Challenge}
+Draw a graph depicting what happens as time evolves, and briefly explain what ``beating'' is and how it arises.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Resonance}
+
+\section*{Resources}
+\begin{itemize}
+    \item \url{https://www.johndcook.com/blog/2013/02/22/undamped-forced-vibrations/}
+    \item Video: \url{https://www.youtube.com/watch?v=v3ImPthjI3o}
+\end{itemize}
+
+\subsection*{Challenge}
+Resonance occurs when the system is forced at its natural frequency (ie, $\omega = \omega_0$).
+
+1. Show that when starting from position ``0'' at rest, when the system is driven at its natural frequency it evolves with time according to the equation
+\begin{equation}
+    x(t) = \frac{F}{2 m \omega_0} t \sin \omega t
+\end{equation}
+
+2. Draw a graph depicting what is happening as time evolves, and briefly explain what resonance is.

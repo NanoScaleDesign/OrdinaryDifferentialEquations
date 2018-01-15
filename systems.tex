@@ -560,6 +560,7 @@ You should be able to generate two eigenvectors by using the top and bottom rows
 When decomposing a higher-order ODE into a system of 1st-order ODE's, we are actually dealing with a special form of 1st-order ODE system that looks like
 
 \begin{equation}
+    \label{eq:hightoloworder}
      \left(
         \begin{array}{c}
             x_1' \\ x_2' \\ x_3' \\ x_4'
@@ -641,8 +642,9 @@ You should find that you solution is consistent with
 \section{Graphs of system solutions}
 
 \subsection*{Resources}
-In the previous challenge you determined $x_1$ and $x_2$ with solutions such as
+In challenge \ref{sec:systembasis} you considered systems of equations that arose from decomposition of a higher-order ODE into a system of 1st-order ODE's as depicted in equation \ref{eq:hightoloworder}. For a 2nd-order ODE, for example, you could decompose this into two 1st-order ODE's, determining $x_1$ and $x_2$ with solutions such as
 \begin{equation}
+    \label{eq:en6tet}
     \bm{x} = \matrixcrr{x_1}{x_2} = c_1 \matrixcrr{-1}{6} e^{-6t} + c_2 \matrixcrr{1}{1} e^t
 \end{equation}
 
@@ -657,7 +659,7 @@ This particular system arose from a 2nd-order differential equation:
     y'' + 5y' - 6y = 0 \label{eqn:sys2ndoode}
 \end{equation}
 
-we have learned in challenge \ref{sec:systembasis} that this 2nd-order equation can be written in terms of $x$:
+We have learned in challenge \ref{sec:systembasis} that this 2nd-order equation can be written in terms of $x$:
 
 \begin{equation}
     x_3 + 5x_2 - 6 x_1 = 0
@@ -697,23 +699,6 @@ At low velocities the pendulum swings back and forth (blue circles, angular velo
 
 \subsection*{Challenge}
 1.\\
-In challenge \ref{sec:systemsolving} you determined general solutions to exercises 2, 3 and 4.
-The example earlier in this challenge corresponds to exercise 1 of that same page.
-
-The graphs below correspond to systems arising from exercises 1 to 5.
-Place the graphs below in the same order those exercises.
-Note that in order to maintain clarity, the graphs are not necessarily plotted over the same time interval $t$.
-
-\begin{tabular}{cc}
-    \includegraphics[scale=0.6]{phase_space_a.png} &
-    \includegraphics[scale=0.6]{phase_space_b.png} \\
-    \includegraphics[scale=0.6]{phase_space_c.png} &
-    \includegraphics[scale=0.5]{phase_space_d.png} \\
-    \includegraphics[scale=0.6]{phase_space_e.png} &
-\end{tabular}
-% NT: Add graphs that have the same starting position so students need to check the shape of the graph, as well as the t=0 position
-
-2.\\
 Considering the graph shown earlier of angular momentum vs angle for a rigid pendulum, add the points of the following true statements:
 
 \textbf{1 point} An initial angular velocity of 1 unit results in whirring circular motion irrespective of the starting angle.
@@ -736,13 +721,33 @@ Considering the graph shown earlier of angular momentum vs angle for a rigid pen
 
 \textbf{512 points} An initial angular velocity of 3 units results in whirring circular motion in the opposite direction as an initial angular velocity of -3 units.
 
+% NT: Split this into its own challenge
+2.\\
+For equations that do not necessarily derive from a higher-order ODE, the $x$ and $y$ axes do not necessarily represent position-momentum phase-space, and the exact meaning of the axes depends on the specific system under study.
+
+In challenge \ref{sec:systemsolving} you determined general solutions to exercises 2, 3 and 4.
+The example earlier in this challenge (equation \ref{eq:en6tet}) corresponds to exercise 1 of that same page.
+
+The graphs below correspond to systems arising from exercises 1 to 5.
+Place the graphs below in the same order those exercises.
+Note that in order to maintain clarity, the graphs are not necessarily plotted over the same time interval $t$, but they do all start at $t=0$.
+
+\begin{tabular}{cc}
+    \includegraphics[scale=0.6]{phase_space_a.png} &
+    \includegraphics[scale=0.6]{phase_space_b.png} \\
+    \includegraphics[scale=0.6]{phase_space_c.png} &
+    \includegraphics[scale=0.5]{phase_space_d.png} \\
+    \includegraphics[scale=0.6]{phase_space_e.png} &
+\end{tabular}
+% NT: Add graphs that have the same starting position so students need to check the shape of the graph, as well as the t=0 position
+
 \subsection*{Solutions}
 1.\\
-\solstr{j}{b63166}
-
+\solint{k}{5f8194}
 
 2.\\
-\solint{k}{5f8194}
+\solstr{j}{b63166}
+
 
 % NT: bifurcation? https://en.wikipedia.org/wiki/Hopf_bifurcation
 % Other Pendulum resources of interest: http://math.stackexchange.com/questions/666806/nonlinear-pendulum and https://www.youtube.com/watch?v=6KSXLGHsrrs
