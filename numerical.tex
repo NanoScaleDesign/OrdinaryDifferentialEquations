@@ -85,6 +85,10 @@ Referring to the slope-field you drew in challenge \ref{sec:numericalfield}, exp
 \end{itemize}
 
 \subsection*{Comment}
+Note that the above resource contains an error in the Runge-Kutta formula. The correct expression for $k_{n4}$ is:
+\begin{equation}
+    k_{n4} = f \left( x_n + \Delta x, y_n + \Delta x k_{n3} \right)
+\end{equation}
 Derivation of the Runge-Kutta method is beyond this course, however there are many resources online going into more detail. This video-series is nice, although optional:
 \begin{enumerate}
     \item \url{https://www.youtube.com/watch?v=b-OSyxOpxKc}
@@ -99,7 +103,7 @@ Derivation of the Runge-Kutta method is beyond this course, however there are ma
 2. Compare your answer to $v(1/2)$ obtained using the Euler method with the same step-size. How does the behaviour differ?
 
 \subsection*{Solution}
-1. $v(1/2) = 2.99$
+1. (To be updated) %$v(1/2) = 2.99$ %NT: This was done following the equations in the PDF so this answer will be wrong.
 
 2. Please compare your answer with your partner or check with the teacher.
 
