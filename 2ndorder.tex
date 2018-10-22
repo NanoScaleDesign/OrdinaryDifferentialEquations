@@ -1,4 +1,4 @@
-\section{Hooke's law}
+\section{(C1) Hooke's law}
 \label{sec:hooke}
 
 \subsection*{Comment}
@@ -41,7 +41,7 @@ To check your answer, calculate the oscillation frequency for a harmonic spring 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Exponentials and trigonometry}
+\section{(C2) Exponentials and trigonometry}
 
 \subsection*{Resources}
 \begin{itemize}
@@ -61,11 +61,11 @@ Please compare your solution with your partner or discuss with the teacher.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Characteristic equation: understanding}
+\section{(C3) Characteristic equation: understanding}
 
 \subsection*{Resources}
 \begin{itemize}
-    \item Book (\url{http://tutorial.math.lamar.edu/getfile.aspx?file=B,1,N}) from page 106.
+    \item Book (\url{http://tutorial.math.lamar.edu/getfile.aspx?file=B,1,N}) from page 113.
 \end{itemize}
 
 \subsection*{Comment}
@@ -76,7 +76,7 @@ It is possible to add a damping term $B$ to Hooke's law that is proportional to 
     A \frac{d^2y}{dt^2} + B \frac{dy}{dt} + C y = 0
 \end{equation}
 
-Show that, assuming that all solutions to a 2nd-order differential equation of the form above will have solutions $y(t)=e^{rt}$, the value of $r$ can in principle be determined by solving the following a quadratic equation of the form
+Show that, assuming that all solutions to a 2nd-order differential equation of the form above will have solutions $y(t)=e^{rt}$, the value of $r$ can in principle be determined by solving a quadratic equation of the form
 \begin{equation}
     A r^2 + Br + C = 0
 \end{equation}
@@ -90,7 +90,7 @@ If you are unsure of your derivation, please ask someone.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Characteristic equation: roots}
+\section{(C4,C5,C6) Characteristic equation: roots}
 
 \subsection*{Resources}
 \begin{itemize}
@@ -101,9 +101,9 @@ If you are unsure of your derivation, please ask someone.
 \subsection*{Challenge}
 Sum the points of the differential equations that have characteristic equations with
 \begin{itemize}
-    \item Real, distinct roots
-    \item Complex roots
-    \item Equal roots
+    \item Real, distinct roots (C4)
+    \item Complex roots (C5)
+    \item Equal roots (C6)
 \end{itemize}
 
 1 point: $\displaystyle -3 y'' - 5 y' + 2 y = 0$ % C
@@ -135,11 +135,11 @@ Sum the points of the differential equations that have characteristic equations 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Characteristic equation: real negative roots}
+\section{(C7) Characteristic equation: real negative roots}
 
 \subsection*{Resources}
 \begin{itemize}
-    \item Book (\url{http://tutorial.math.lamar.edu/getfile.aspx?file=B,1,N}) from page 108.
+    \item Book (\url{http://tutorial.math.lamar.edu/getfile.aspx?file=B,1,N}) from page 118.
     \item Text: \url{http://www.its.caltech.edu/~roberto/FSRI/Lecture/fsri_math_2011_Aug_4.pdf}
 \end{itemize}
 
@@ -164,11 +164,11 @@ Sum the points of the differential equations that have characteristic equations 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Characteristic equation: real positive roots}
+\section{(C8) Characteristic equation: real positive roots}
 
 \subsection*{Resources}
 \begin{itemize}
-    \item Book (\url{http://tutorial.math.lamar.edu/getfile.aspx?file=B,1,N}) from page 108.
+    \item Book (\url{http://tutorial.math.lamar.edu/getfile.aspx?file=B,1,N}) from page 118.
     \item Text: \url{http://www.its.caltech.edu/~roberto/FSRI/Lecture/fsri_math_2011_Aug_4.pdf}
 \end{itemize}
 
@@ -191,38 +191,30 @@ Here we include a damping term again, but this time it is negative and this is e
 
 
 
-\stepcounter{section}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Characteristic equation: B in equations with real roots}
-%
-%\subsection*{Challenge}
-%
-%Considering the equation
-%\begin{equation}
-    %A y'' + B y' + C y = 0
-%\end{equation}
-%add the points of the following \emph{true} statements:
-%
-%1 point: Positive damping (positive B) leads to solutions with exponentials with positive exponents.
-%
-%2 points: Positive damping (positive B) leads to solutions with exponentials with negative exponents.
-%
-%4 points: Negative damping (negative B) leads to solutions with exponentials with positive exponents.
-%
-%8 points: Negative damping (negative B) leads to solutions with exponentials with negative exponents.
-%
-%16 points: Exponentials with positive exponents (eg, $e^{t}$) lead to exponential growth (instability).
-%
-%32 points: Exponentials with negative exponents (eg, $e^{-t}$) lead to exponential growth (instability).
-%
-%64 points: Exponentials with positive exponents (eg, $e^{t}$) lead to a damped signal (stability).
-%
-%128 points: Exponentials with negative exponents (eg, $e^{-t}$) lead to a damped signal (stability).
-%
-%\subsection*{Solution}
-%\solint{o}{8e808b}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{(C9) Characteristic equation: real mixed roots}
+
+\subsection*{Resources}
+\begin{itemize}
+    \item Book (\url{http://tutorial.math.lamar.edu/getfile.aspx?file=B,1,N}) from page 118.
+    \item Text: \url{http://www.its.caltech.edu/~roberto/FSRI/Lecture/fsri_math_2011_Aug_4.pdf}
+\end{itemize}
+
+\subsection*{Comment}
+Here we include the same negative damping term, but due to the coefficient of the other terms you obtain roots of mixed signs.
+
+\subsection*{Challenge}
+Solve the following 2nd-order differential equation that has real roots. 
+
+\begin{equation}
+    -2 y'' - 3 y' + 2 y = 0
+\end{equation}
+
+\subsection*{Solution}
+$y(1) = -5.38$ given initial conditions $y(0)=5$ and $y'(0)=-20$
 
 
 
@@ -230,11 +222,11 @@ Here we include a damping term again, but this time it is negative and this is e
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Characteristic equation: equal roots}
+\section{(C10) Characteristic equation: equal roots}
 
 \subsection*{Resources}
 \begin{itemize}
-    \item Book (\url{http://tutorial.math.lamar.edu/getfile.aspx?file=B,1,N}) from page 117.
+    \item Book (\url{http://tutorial.math.lamar.edu/getfile.aspx?file=B,1,N}) from page 127.
     \item Text: \url{http://www.its.caltech.edu/~roberto/FSRI/Lecture/fsri_math_2011_Aug_4.pdf}
 \end{itemize}
 
@@ -253,7 +245,7 @@ $y(1)=16.310$
 
 
 
-
+\iffalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -261,7 +253,7 @@ $y(1)=16.310$
 
 \subsection*{Resources}
 \begin{itemize}
-    \item Book (\url{http://tutorial.math.lamar.edu/getfile.aspx?file=B,1,N}) from page 112.
+    \item Book (\url{http://tutorial.math.lamar.edu/getfile.aspx?file=B,1,N}) from page 122.
     \item Text: \url{http://www.its.caltech.edu/~roberto/FSRI/Lecture/fsri_math_2011_Aug_4.pdf}
 \end{itemize}
 
@@ -280,7 +272,9 @@ are $\pm i \sqrt{C/A}$.
 subject to the initial conditions $y(0)=4$ and $y'(0)=10 \pi$.
 
 \subsection*{Solution}
-$y(0.4)=-0.297$
+1. Please discuss in class if you are unsure of your solution.
+
+2. $y(0.4)=-0.297$
 
 
 
@@ -292,7 +286,7 @@ $y(0.4)=-0.297$
 
 \subsection*{Resources}
 \begin{itemize}
-    \item Book (\url{http://tutorial.math.lamar.edu/getfile.aspx?file=B,1,N}) from page 112.
+    \item Book (\url{http://tutorial.math.lamar.edu/getfile.aspx?file=B,1,N}) from page 122.
     \item Text: \url{http://www.its.caltech.edu/~roberto/FSRI/Lecture/fsri_math_2011_Aug_4.pdf}
 \end{itemize}
 
@@ -316,7 +310,7 @@ $y(0.4)=8.0867$
 
 \subsection*{Resources}
 \begin{itemize}
-    \item Book (\url{http://tutorial.math.lamar.edu/getfile.aspx?file=B,1,N}) from page 112.
+    \item Book (\url{http://tutorial.math.lamar.edu/getfile.aspx?file=B,1,N}) from page 122.
     \item Text: \url{http://www.its.caltech.edu/~roberto/FSRI/Lecture/fsri_math_2011_Aug_4.pdf}
 \end{itemize}
 
@@ -456,3 +450,4 @@ given the initial conditions $y(0)=6$ and $y'(0)=2$.
 
 
 \input{nonhomo.tex}
+\fi
